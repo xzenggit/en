@@ -3,8 +3,10 @@ title: "R Notes"
 author: "Xiangming Zeng"
 date: "`r Sys.Date()`"
 output: 
-  rmarkdown::html_document:
+  html_document:
     toc: true
+    toc_depth: 2
+    keep_md: true
 ---
 This is my personal note for learning R. A lot of contents come from online resources.
 
