@@ -10,9 +10,11 @@ This is my personal note for learning R. A lot of contents come from online reso
 
 ## Basic R, R markdown, and git
 
+### R markdown
+
 Rmarkdown is very useful tool for putting notes together. More references can be found at [Rstudio rmarkdown reference](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) and the [official cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
 
-## git
+### git
 
 create a new repository on the command line:
 ```{r, echo=TRUE, eval=FALSE}
