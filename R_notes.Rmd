@@ -1,7 +1,6 @@
 ---
 title: "R Notes"
 author: "Xiangming Zeng"
-date: "`r Sys.Date()`"
 output: 
   html_document:
     toc: true
@@ -34,8 +33,6 @@ git remote add origin https://github.com/xzenggit/notes.git
 git push -u origin master
 ```
 
-
-
 ## Data manipulation (dplyr related)
 
 The dplyr package provides very powerful functions for data manipulation:
@@ -49,7 +46,9 @@ The dplyr package provides very powerful functions for data manipulation:
 
 Here is a good [introduction](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html) about dplyr.
 
-## Exploratory data analysis
+## Exploratory data analysis (ggplot2 related)
+
+
 
 ## Regression and statistical inference
 
