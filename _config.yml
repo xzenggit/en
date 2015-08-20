@@ -5,7 +5,7 @@
 #baseurl: http://qckanemoto.github.io
 baseurl: http://qckanemoto.github.io/jekyll-qck-theme
 title: notebook
-description: This is my personal notebook.
+description: This is my personal notebook ^_^
 avatar: /assets/img/ogp.png
 language: ja
 
@@ -15,9 +15,9 @@ language: ja
 icons:
   rss: true
   email:
-  github: qckanemoto
+  github: xzenggit
   bitbucket:
-  twitter: qckanemoto
+  twitter: 
   facebook:
   google_plus:
   tumblr:
@@ -25,7 +25,7 @@ icons:
   dribbble:
   flickr:
   instagram:
-  linkedin:  # full URL
+  linkedin: www.linkedin.com/in/zengx
   pinterest:
   reddit:
   soundcloud:
