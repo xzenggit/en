@@ -10,7 +10,7 @@ Basically, I followed the steps given at [github-pages](https://pages.github.com
 
 There are some templates you can download at http://jekyllthemes.org. After downloading your favorite template, you can uncompress it under your local repo directory (for user pages, it's your master branch; and for project pages, it's your gh-pages branch). 
 
-Then, you need to change the the line `baseurl:` in the `_config.yml` file to `baseurl: http:/your-username.github.io`. Substitute `your-username` with your own github username. You can also change other things as you like. 
+Then, you need to change the the line `baseurl:` in the `_config.yml` file to `baseurl: http:/your-username.github.io`. Substitute `your-username` with your own github username. Or add `baseurl:\repo-name` for project papges. You can also change other things as you like. 
 
 As last, you can do `git add .` and `git commit -m "new web"`, and `git push` to your github repo. Go to `your-username.github.io`(for user papges) or `your-username.github.io/project-name` (for project pages), you can find your own website now! The greatest thing is it's free!
 
