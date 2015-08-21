@@ -71,7 +71,7 @@ paginate_path: page/:num
 #
 share_buttons: false
 ogp:
-  image_url: http://xzenggit.github.io/notes/
+  image_url: http://xzenggit.github.io/en/
   fb:
     admin: # facebook admin id
     app_id: # facebook application id
