@@ -2,7 +2,7 @@
 # Basic settings.
 #
 #baseurl: http://localhost:4000
-#baseurl: http://qckanemoto.github.io
+#baseurl: http://xzenggit.github.io
 baseurl: /notes
 title: notebook
 description: This is my personal notebook ^_^
