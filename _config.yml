@@ -3,7 +3,7 @@
 #
 #baseurl: http://localhost:4000
 #baseurl: http://xzenggit.github.io
-baseurl: /notes
+baseurl: /en
 title: notebook
 description: This is my personal notebook ^_^
 avatar: /assets/img/ogp.png
