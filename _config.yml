@@ -1,9 +1,8 @@
 #
 # Basic settings.
 #
-#baseurl: http://localhost:4000
-#baseurl: http://xzenggit.github.io
-baseurl: /en
+# you need to change the baseurl to your repo
+baseurl: /cn
 title: notebook
 description: This is my personal notebook ^_^
 avatar: /assets/img/ogp.png
