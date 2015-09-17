@@ -1,4 +1,8 @@
-# R Notes
+---
+layout: post
+title: R notes
+tags: R notes
+---
 This is my personal note for learning R. A lot of contents come from online resources, such as Coursera and Datacamp.
 
 ## Basic R, R markdown, and git
