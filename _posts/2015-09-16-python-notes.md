@@ -5,65 +5,37 @@ tags: python notes
 ---
 
 This is my personal python notes.
-
 There are many many many ... python tutorials on the internet. I found some of them are pretty useful.
-
 * [Google python course (basic)](https://developers.google.com/edu/python/)
-
 * [Codecademy python course (basic)](www.codecademy.com/)
-
 * [Dataquest data science course](https://www.dataquest.io/)
-
 * [Quantitative Economics Python](http://quant-econ.net/py/index.html)
-
 * [Introduction to Python for Econometrics, Statistics and Data Analysis](https://www.kevinsheppard.com/images/0/09/Python_introduction.pdf)
-
 * [Python Scientific Lecture Notes](http://scipy-lectures.github.io/)
 
-
-
-# Notes from [Python for data analysis](https://github.com/pydata/pydata-book/blob/master/ch02.ipynb)
+## Notes from [Python for data analysis](https://github.com/pydata/pydata-book/blob/master/ch02.ipynb)
 
 ## Ch2. Introductory Examples
-
 Use inline function example: `time_zones = [rec['tz'] for rec in records if 'tz' in rec]`
-
 High-performance container datatypes: `Counter` and `defaultdict`. See [here](https://docs.python.org/2/library/collections.html).
 
 Common functions: 
-
 `most_common([n])` return a list of the n most common elements and their counts.
-
 `value_counts` return object containing counts of unique values.
-
 `notnull()` return not null index.
-
 `dropna()` return index without na.
-
 `fillna(n)` fill na with n.
-
 `where` see [here](http://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html).
-
 `argsort` return indices that would sort an array. See [here](http://docs.scipy.org/doc/numpy/reference/generated/numpy.argsort.html).
-
 `unstack` pivot a level of index labels, returning a DataFrame having a new level of column lables whose inner-most level consists of the pivoted index labels. See [here](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.unstack.html).
-
 `pandas.pivot_table` creates a spreadsheet-style pivot table as a DataFrame. See [here](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.pivot_table.html).
-
 `dataframe.ix` is a primarily label-location based indexer, with integer position fallback. See [here](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.ix.html).
-
 `dataframe.rename` alter aexes input function.
-
 `dataframe.sort_index` sort dataframe either by labels along either axis or by the values in a colum. See [here](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sort_index.html).
-
 `groupby`, `tail`, `head` same meaning as function name.
-
 `pd.read_csv` read csv file.
-
 `numpy.allclose` returns True if two arrays are element-wise equal within a tolerance. See [here](http://docs.scipy.org/doc/numpy/reference/generated/numpy.allclose.html).
-
 `dataframe.div` floating division of dataframe and other, element-wise. See [here](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.div.html).
-
 `argmax` retunrs the first index of the maximum value.
 
 Plot figures:
