@@ -280,19 +280,14 @@ See [here](https://github.com/pydata/pydata-book/blob/master/ch11.ipynb) for exa
 `is` is for reference equality. use it when you would like to know if two references refer to the same object.
 
 `.item()` method can be used to access a dictionary key and value in a loop. For example,
-```
+
+```python
 animal_types = {"robin": "bird", "pug": "dog", "osprey": "bird"}
-
 The .items method lets us access a dictionary key and value in a loop.
-
 for key,value in animal_types.items():
-
 print(key)
-
 print(value)
-
 # This is equal to the value
-
 print(animal_types[key])
 ```
 
