@@ -33,7 +33,10 @@ tags: probability statistics
 * [Stochastic Calculus lectures from NYU](http://www.math.nyu.edu/faculty/goodman/teaching/StochCalc2004/)
 
 * [Another Sochastic Calculus lectures from NYU](https://www.math.nyu.edu/faculty/varadhan/stochastic.fall08.html)
+
 ### Regression Models
 
+### Time Series Analysis
+* [Lectures from Chicagobooth](http://faculty.chicagobooth.edu/ruey.tsay/teaching/bs41202/sp2014/)
 
 
