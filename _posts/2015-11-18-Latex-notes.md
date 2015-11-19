@@ -4,6 +4,8 @@ title: LaTeX notes
 tags: LaTeX notes
 ---
 
+Useful latex resources:
+
 [LaTeX Math Symbols](http://www.artofproblemsolving.com/wiki/index.php/LaTeX:Symbols)
 
 [LaTeX Math expression commands](http://www.artofproblemsolving.com/wiki/index.php/LaTeX:Commands)
