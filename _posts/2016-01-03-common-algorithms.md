@@ -3,9 +3,9 @@ layout: post
 title: Notes for common aglorithms
 tags: aglorithm
 ---
-** These notes are mainly copied from [geeksforgeeks](http://www.geeksforgeeks.org/greedy-algorithms-set-1-activity-selection-problem/). **
+**These notes are mainly copied from [geeksforgeeks](http://www.geeksforgeeks.org/greedy-algorithms-set-1-activity-selection-problem/).**
 
-** A collection of algorithms can be found at [daqwest](www.daqwest.com). **
+**A collection of algorithms can be found at [daqwest](www.daqwest.com).**
 
 ### [Common Algorithms](http://www.geeksforgeeks.org/fundamentals-of-algorithms/#DynamicProgramming)
 
