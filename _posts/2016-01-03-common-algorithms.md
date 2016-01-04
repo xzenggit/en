@@ -20,7 +20,7 @@ tags: aglorithm
 ### [Complexity](http://bigocheatsheet.com/)
 
 * Define complexity as a numerical function T(n) - time versus the input size n.
-* Big-Oh (Upper Bound): $f(n) = O(g(n)) \Leftrightarrow \exists c > 0, n_0 > 0$, s.t. $f(n) \le cg(n)$, for all $n\ge n_0$.
+* Big-Oh (Upper Bound): $$ f(n) = O(g(n)) \Leftrightarrow \exists c > 0, n_0 > 0$$, s.t. $f(n) \le cg(n)$, for all $n\ge n_0$.
 * Big-Omega (Lower Bound): $f(n) = \Omega (g(n)) \Leftrightarrow \exists c>0, n_0>0$, s.t. $f(n) \ge cg(n)$, for all $n\ge n_0$.
 * Big-theta: $f(n)=\Theta(g(n)) \Leftrightarrow \exists f(n) = O(g(n))$ and $f(n)=\Omega(g(n))$.
 * Constant time: $O(1)$, run in constant time regardless of input size.
