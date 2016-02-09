@@ -21,7 +21,7 @@ Script for making a gif animation:
 
 ```shell
 #!/bin/bash
-# convert png to jpg, and then make a gif with delay 10
+# convert png to jpg, and then make a gif with delay in 1/100 seconds, and cycle(1) or not (0).
 mogrify -format jpg *.png
 convert -delay 10 -loop 0 *.jpg my_animation.gif
 ```
