@@ -7,7 +7,7 @@ baseurl: /en
 title: notebook
 description: This is my personal notebook ^_^
 avatar: /assets/img/ogp.png
-language: ja
+language: en
 
 #
 # Icons
@@ -94,8 +94,8 @@ include: ["_pages"]
 
 #markdown: redcarpet
 markdown: kramdown
-redcarpet:
-  extensions: ["autolink", "fenced_code_blocks", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes", "no_intra_emphasis"]
+#redcarpet:
+#  extensions: ["autolink", "fenced_code_blocks", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes", "no_intra_emphasis"]
 highlighter: rouge
 
 excerpt_separator: <!--more-->
