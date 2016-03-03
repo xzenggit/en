@@ -6,8 +6,13 @@ layout: null
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ site.title | xml_escape }}</title>
+<<<<<<< HEAD
     <atom:link href="{{ '/feed.xml' | prepend: site.baseurl }}" rel="self" type="application/rss+xml"/>
     <link>{{ site.baseurl }}/</link>
+=======
+    <atom:link href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+    <link>{{ site.baseurl | prepend: site.url }}/</link>
+>>>>>>> b295926290f86b53d08e76345feb3d9943f41ff9
     <description>{{ site.description | xml_escape }}</description>
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     {% for post in site.posts limit:15 %}
