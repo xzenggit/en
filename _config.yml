@@ -96,7 +96,8 @@ index:
 
 include: ["_pages"]
 
-markdown: kramdown
+markdown: maruku
+#kramdown
 #redcarpet:
 #  extensions: ["autolink", "fenced_code_blocks", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes", "no_intra_emphasis"]
 highlighter: rouge
