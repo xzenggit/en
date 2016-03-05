@@ -21,17 +21,17 @@ tags: aglorithm
 
 * Define complexity as a numerical function T(n) - time versus the input size n.
 * Big-Oh (Upper Bound): $$f(n) = O(g(n)) \Leftrightarrow \exists c > 0, n_0 > 0$$, s.t. $$f(n) \le cg(n)$$, for all $$n\ge n_0$$.
-* Big-Omega (Lower Bound): $f(n) = \Omega (g(n)) \Leftrightarrow \exists c>0, n_0>0$, s.t. $f(n) \ge cg(n)$, for all $n\ge n_0$.
-* Big-theta: $f(n)=\Theta(g(n)) \Leftrightarrow \exists f(n) = O(g(n))$ and $f(n)=\Omega(g(n))$.
-* Constant time: $O(1)$, run in constant time regardless of input size.
-* Linear time: $O(n)$, run time propotional to input size n.
-* Log time: $O(log(n))$, run time propotional to log of input size n.
-* Quadratic time: $O(n^2)$, run time proportional to square of input size n.
+* Big-Omega (Lower Bound): $$f(n) = \Omega (g(n)) \Leftrightarrow \exists c>0, n_0>0$$, s.t. $$f(n) \ge cg(n)$$, for all $$n\ge n_0$$.
+* Big-theta: $$f(n)=\Theta(g(n)) \Leftrightarrow \exists f(n) = O(g(n))$$ and $$f(n)=\Omega(g(n))$$.
+* Constant time: $$O(1)$$, run in constant time regardless of input size.
+* Linear time: $$O(n)$$, run time propotional to input size n.
+* Log time: $$O(log(n))$$, run time propotional to log of input size n.
+* Quadratic time: $$O(n^2)$$, run time proportional to square of input size n.
 * [Analysis of Algorithm](http://www.geeksforgeeks.org/analysis-of-algorithms-set-4-analysis-of-loops/)
 * Master Method: T(n) = aT(n/b) + f(n), where a>=1 and b > 1.
-    * if $f(n)=\Theta(n^c)$ where $c<log_b^a$, then $T(n) = \Theta (n^{log_b^a})$
-    * if $f(n) = \Theta(n^c)$ where $c=log_b^a$, then $T(n) = \Theta (n^c{log_b^a})$
-    * if $f(n) = \Theta(n^c)$ where $c>log_b^a$, then $T(n) = \Theta (f(n))$
+    * if $$f(n)=\Theta(n^c)$$ where $$c<log_b^a$$, then $$T(n) = \Theta (n^{log_b^a})$$
+    * if $$f(n) = \Theta(n^c)$$ where $$c=log_b^a$$, then $$T(n) = \Theta (n^c{log_b^a})$$
+    * if $$f(n) = \Theta(n^c)$$ where $$c>log_b^a$$, then $$T(n) = \Theta (f(n))$$
 
 ![Big-O Complexity Chart](http://bigocheatsheet.com/img/big-o-complexity.png)
 
