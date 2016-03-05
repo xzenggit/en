@@ -31,7 +31,6 @@ $(function () {
     $(".site-aside .sticky").sticky({
         topSpacing: parseInt(topSpacing)
     });
-<<<<<<< HEAD
 
     // social buttons.
     $(".share-buttons").each(function () {
@@ -42,6 +41,4 @@ $(function () {
             waitCounter: '<span>Wait...</span>'
         });
     });
-=======
->>>>>>> b295926290f86b53d08e76345feb3d9943f41ff9
 });

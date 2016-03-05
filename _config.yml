@@ -1,8 +1,7 @@
 #
 # Basic settings.
 #
-#baseurl: http://localhost:4000
-#baseurl: http://xzenggit.github.io
+# you need to change the baseurl to your repo
 baseurl: /en
 title: notebook
 description: This is my personal notebook ^_^
@@ -71,7 +70,7 @@ paginate_path: page/:num
 #
 share_buttons: false
 ogp:
-  image_url: http://xzenggit.github.io/notes/
+  image_url: http://xzenggit.github.io/en/
   fb:
     admin: # facebook admin id
     app_id: # facebook application id
@@ -92,27 +91,11 @@ gems:
 
 include: ["_pages"]
 
-#markdown: redcarpet
 markdown: kramdown
-kramdown:
-  input: GFM
-  auto_ids:       true
-  footnote_nr:    1
-  entity_output:  as_char
-  toc_levels:     1..6
-  smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-  
-  coderay:
-    coderay_wrap:              div
-    coderay_line_numbers:      inline
-    coderay_line_number_start: 1
-    coderay_tab_width:         4
-    coderay_bold_every:        10
-    coderay_css:               style
 #redcarpet:
 #  extensions: ["autolink", "fenced_code_blocks", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes", "no_intra_emphasis"]
 highlighter: rouge
+
 excerpt_separator: <!--more-->
 
 sass:
