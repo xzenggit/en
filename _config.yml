@@ -81,6 +81,11 @@ ogp:
 gems:
   - jemoji
 
+#### index post is expanding or not 
+index:
+    expand: true           ## default is unexpanding,so you can only see the short description of each post.
+    excerpt_link: Read More 
+
 #
 # Styles: see "_sass/base/_variables.scss"
 #
