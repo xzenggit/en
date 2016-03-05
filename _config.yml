@@ -113,8 +113,7 @@ kramdown:
 #redcarpet:
 #  extensions: ["autolink", "fenced_code_blocks", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes", "no_intra_emphasis"]
 highlighter: rouge
-excerpt_separator: "\n\n"
-#excerpt_separator: <!--more-->
+excerpt_separator: <!--more-->
 
 sass:
   sass_dir: _sass
