@@ -37,6 +37,7 @@ tags: aglorithm
 
 ### Dynamic Programming Problems
 Two main properties of a probelm that can be sovled using Dynamic Programming:
+
 * Overlapping Subproblems
 * Optimal Substructure
 
@@ -44,6 +45,7 @@ Two main properties of a probelm that can be sovled using Dynamic Programming:
  Dynamic Programming is mainly used when solutions of same subproblems are needed again and again. In dynamic programming, computed solutions to subproblems are stored in a table so that these don’t have to recomputed.
 
 Two different ways to sotre the values so that these values can be reused:
+
 * Memoization (Top Down)
 * Tabulation (Bottom Up)
 
@@ -150,7 +152,7 @@ def lis(arr):
 
 #### [Longest Common Subsequence](http://www.geeksforgeeks.org/dynamic-programming-set-4-longest-common-subsequence/)
 
-Given two sequences, find the length of longest subsequence present in both of them. A subsequence is a sequence that appears in the same relative order, but not necessarily contiguous. For example, “abc”, “abg”, “bdf”, “aeg”, ‘”acefg”, .. etc are subsequences of “abcdefg”. So a string of length n has 2^n different possible subsequences. LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3.
+Given two sequences, find the length of longest subsequence present in both of them. A subsequence is a sequence that appears in the same relative order, but not necessarily contiguous. For example, “abc”, “abg”, “bdf”, “aeg”, ‘”acefg”, .. etc are subsequences of “abcdefg”. So a string of length n has $$2^n$$ different possible subsequences. LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3.
 
 Let the input sequences be X[0..m-1] and Y[0..n-1] of lengths m and n respectively. And let L(X[0..m-1], Y[0..n-1]) be the length of LCS of the two sequences X and Y. Following is the recursive definition of L(X[0..m-1], Y[0..n-1]).
 
@@ -175,7 +177,7 @@ def lcs(X, Y, m, n):
        return max(lcs(X, Y, m, n-1), lcs(X, Y, m-1, n));
 ```
 
-Time complexity of the above naive recursive approach is $O(2^n)$ in worst case and worst case happens when all characters of X and Y mismatch i.e., length of LCS is 0.
+Time complexity of the above naive recursive approach is $$O(2^n)$$ in worst case and worst case happens when all characters of X and Y mismatch i.e., length of LCS is 0.
 
 If we draw the complete recursion tree, then we can see that there are many subproblems which are solved again and again. So this problem has Overlapping Substructure property and recomputation of same subproblems can be avoided by either using Memoization or Tabulation. Following is a tabulated implementation for the LCS problem.
 
