@@ -673,17 +673,17 @@ Algorithm:
 
 3) While mstSet doesn’t include all vertices
 
-….a) Pick a vertex u which is not there in mstSet and has minimum key value.
+    * a) Pick a vertex u which is not there in mstSet and has minimum key value.
 
-….b) Include u to mstSet.
+    * b) Include u to mstSet.
 
-….c) Update key value of all adjacent vertices of u. To update the key values, iterate through all adjacent vertices. For every adjacent vertex v, if weight of edge u-v is less than the previous key value of v, update the key value as weight of u-v
+    * c) Update key value of all adjacent vertices of u. To update the key values, iterate through all adjacent vertices. For every adjacent vertex v, if weight of edge u-v is less than the previous key value of v, update the key value as weight of u-v
 
 The idea of using key values is to pick the minimum weight edge from cut. The key values are used only for vertices which are not yet included in MST, the key value for these vertices indicate the minimum weight edges connecting them to the set of vertices included in MST.
 
 
 
-```C++
+```cpp
 // A C / C++ program for Prim's Minimum Spanning Tree (MST) algorithm. 
 // The program is for adjacency matrix representation of the graph
  
@@ -792,13 +792,13 @@ Algorithm:
 
 3) While sptSet doesn’t include all vertices
 
-….a) Pick a vertex u which is not there in sptSetand has minimum distance value.
+    * a) Pick a vertex u which is not there in sptSetand has minimum distance value.
 
-….b) Include u to sptSet.
+    * b) Include u to sptSet.
 
-….c) Update distance value of all adjacent vertices of u. To update the distance values, iterate through all adjacent vertices. For every adjacent vertex v, if sum of distance value of u (from source) and weight of edge u-v, is less than the distance value of v, then update the distance value of v.
+    * c) Update distance value of all adjacent vertices of u. To update the distance values, iterate through all adjacent vertices. For every adjacent vertex v, if sum of distance value of u (from source) and weight of edge u-v, is less than the distance value of v, then update the distance value of v.
 
-```C++
+```cpp
 // A C / C++ program for Dijkstra's single source shortest path algorithm.
 // The program is for adjacency matrix representation of the graph
  
@@ -909,20 +909,20 @@ Following are some standard algorithms that are Divide and Conquer algorithms.
 
 3) Merge Sort is also a sorting algorithm. The algorithm divides the array in two halves, recursively sorts them and finally merges the two sorted halves.
 
-4) Closest Pair of Points The problem is to find the closest pair of points in a set of points in x-y plane. The problem can be solved in $O(n^2)$ time by calculating distances of every pair of points and comparing the distances to find the minimum. The Divide and Conquer algorithm solves the problem in O(nLogn) time.
+4) Closest Pair of Points The problem is to find the closest pair of points in a set of points in x-y plane. The problem can be solved in $$O(n^2)$$ time by calculating distances of every pair of points and comparing the distances to find the minimum. The Divide and Conquer algorithm solves the problem in O(nLogn) time.
 
-5) Strassen’s Algorithm is an efficient algorithm to multiply two matrices. A simple method to multiply two matrices need 3 nested loops and is $O(n^3)$. Strassen’s algorithm multiplies two matrices in $O(n^2.8974)$ time.
+5) Strassen’s Algorithm is an efficient algorithm to multiply two matrices. A simple method to multiply two matrices need 3 nested loops and is $$O(n^3)$$. Strassen’s algorithm multiplies two matrices in $O(n^2.8974)$ time.
 
 6) Cooley–Tukey Fast Fourier Transform (FFT) algorithm is the most common algorithm for FFT. It is a divide and conquer algorithm which works in O(nlogn) time.
 
-7) Karatsuba algorithm for fast multiplication  it does multiplication of two n-digit numbers in at most $3 n^{\log_23}\approx 3 n^{1.585}$single-digit multiplications in general (and exactly $n^{\log_23}$ when n is a power of 2). It is therefore faster than the classical algorithm, which requires n2 single-digit products. If n = 210 = 1024, in particular, the exact counts are 310 = 59,049 and (210)2 = 1,048,576, respectively.
+7) Karatsuba algorithm for fast multiplication  it does multiplication of two n-digit numbers in at most $$3 n^{\log_23}\approx 3 n^{1.585}$$ single-digit multiplications in general (and exactly $$n^{\log_23}$$ when n is a power of 2). It is therefore faster than the classical algorithm, which requires n2 single-digit products. If n = 210 = 1024, in particular, the exact counts are 310 = 59,049 and (210)2 = 1,048,576, respectively.
 
 We will publishing above algorithms in separate posts.
 
 Divide and Conquer (D & C) vs Dynamic Programming (DP)
 Both paradigms (D & C and DP) divide the given problem into subproblems and solve subproblems. How to choose one of them for a given problem? Divide and Conquer should be used when same subproblems are not evaluated many times. Otherwise Dynamic Programming or Memoization should be used. For example, Binary Search is a Divide and Conquer algorithm, we never evaluate the same subproblems again. On the other hand, for calculating nth Fibonacci number, Dynamic Programming should be preferred.
 
-```C++
+```cpp
 # Write a program to calculate pow(x,n)
 /* Function to calculate x raised to the power y in O(logn)*/
 int power(int x, unsigned int y)
@@ -970,7 +970,7 @@ Algorithm:
 * If size of the two arrays is 2 then use below formula to get the median.
     Median = (max(ar1[0], ar2[0]) + min(ar1[1], ar2[1]))/2
 
-```C++
+```cpp
 #include<stdio.h>
  
 int max(int, int); /* to get maximum of two integers */
@@ -1078,7 +1078,7 @@ It requires constant time to check if ar2[j] <= ar1[i] <= ar2[j + 1]. If ar1[i] 
      do binary search in right half (i.e., arr[i+1....right])
 * If you reach at any corner of ar1[] then do binary search in ar2[]
 
-```C++
+```cpp
 #include<stdio.h>
  
 int getMedianRec(int ar1[], int ar2[], int left, int right, int n);
@@ -1167,7 +1167,7 @@ As a pre-processing step, input array is sorted according to x coordinates.
 
 7) Finally return the minimum of d and distance calculated in above step (step 6)
 
-```C++
+```cpp
 // A divide and conquer program in C/C++ to find the smallest distance from a
 // given set of points.
  
@@ -1306,7 +1306,7 @@ int main()
 Given two square matrices A and B of size n x n each, find their multiplication matrix.
 
 Following is a simple way to multiply two matrices.
-```C++
+```cpp
 void multiply(int A[][N], int B[][N], int C[][N])
 {
     for (int i = 0; i < N; i++)
@@ -1322,7 +1322,7 @@ void multiply(int A[][N], int B[][N], int C[][N])
     }
 }
 ```
-Time Complexity of above method is $O(N^3)$.
+Time Complexity of above method is $$O(N^3)$$.
 
 Following is simple Divide and Conquer method to multiply two square matrices.
 
@@ -1331,11 +1331,11 @@ Following is simple Divide and Conquer method to multiply two square matrices.
 2) Calculate following values recursively. ae + bg, af + bh, ce + dg and cf + dh.
 ![Matrix divide and conquer](http://d1gjlxt8vb0knt.cloudfront.net//wp-content/uploads/strassen_new.png)
 
-In the above method, we do 8 multiplications for matrices of size N/2 x N/2 and 4 additions. Addition of two matrices takes $O(N^2)$ time. So the time complexity can be written as
+In the above method, we do 8 multiplications for matrices of size N/2 x N/2 and 4 additions. Addition of two matrices takes $$O(N^2)$$ time. So the time complexity can be written as
 
-T(N) = 8T(N/2) + $O(N^2)$
+T(N) = 8T(N/2) + $$O(N^2)$$
 
-From Master's Theorem, time complexity of above method is $O(N^3)$
+From Master's Theorem, time complexity of above method is $$O(N^3)$$
 which is unfortunately same as the above naive method.
 
 Strassen’s method is similar to above simple divide and conquer method in the sense that this method also divide matrices to sub-matrices of size N/2 x N/2 as shown in the above diagram, but in Strassen’s method, the four sub-matrices of result are calculated using following formulae.
@@ -1343,12 +1343,12 @@ Strassen’s method is similar to above simple divide and conquer method in the 
 ![Strassens](http://d1gjlxt8vb0knt.cloudfront.net//wp-content/uploads/stressen_formula_new_new.png)
 
 Time Complexity of Strassen’s Method
-Addition and Subtraction of two matrices takes $O(N^2)$ time. So time complexity can be written as
+Addition and Subtraction of two matrices takes $$O(N^2)$$ time. So time complexity can be written as
 
-T(N) = 7T(N/2) +  $O(N^2)$
+T(N) = 7T(N/2) +  $$O(N^2)$$
 
 From Master's Theorem, time complexity of above method is 
-$O(N^(Log7))$ which is approximately $O(N^{2.8074})$.
+$$O(N^(Log7))$$ which is approximately $$O(N^{2.8074})$$.
 
 Generally Strassen’s Method is not preferred for practical applications for following reasons.
 
@@ -1432,7 +1432,7 @@ def binarySearch(arr, l, r, x):
 #### [Merge Sort](http://geeksquiz.com/merge-sort/)
 
 MergeSort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merg() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.
-```C++
+```cpp
 /* C program for merge sort */
 #include<stdlib.h>
 #include<stdio.h>
@@ -1547,7 +1547,7 @@ The key process in quickSort is partition(). Target of partitions is, given an a
 Partition Algorithm:
 
 There can be many ways to do partition, following code adopts the method given in CLRS book. The logic is simple, we start from the leftmost element and keep track of index of smaller (or equal to) elements as i. While traversing, if we find a smaller element, we swap current element with arr[i]. Otherwise we ignore current element.
-```C++
+```cpp
 /* A typical recursive implementation of quick sort */
 #include<stdio.h>
  
@@ -1631,7 +1631,7 @@ We are given two arrays ar1[0…m-1] and ar2[0..n-1] and a number x, we need to 
        
 * Print the result. 
 
-```C++
+```cpp
 // C++ program to find the pair from two sorted arays such
 // that the sum of pair is closest to a given number x
 #include <iostream>
