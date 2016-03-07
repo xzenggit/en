@@ -958,14 +958,13 @@ Algorithm:
 * If m1 and m2 both are equal then we are done.
      return m1 (or m2)
      
-* If m1 is greater than m2, then median is present in one 
-   of the below two subarrays.
-    * From first element of ar1 to m1 (ar1[0...|_n/2_|])
-    * From m2 to last element of ar2  (ar2[|_n/2_|...n-1])
+* If m1 is greater than m2, then median is present in one of the below two subarrays.
+    * From first element of ar1 to m1 (ar1[0...n/2])
+    * From m2 to last element of ar2  (ar2[n/2...n-1])
 * If m2 is greater than m1, then median is present in one
    of the below two subarrays.
-    * From m1 to last element of ar1  (ar1[|_n/2_|...n-1])
-    * From first element of ar2 to m2 (ar2[0...|_n/2_|])
+    * From m1 to last element of ar1  (ar1[n/2...n-1])
+    * From first element of ar2 to m2 (ar2[0...n/2])
 * Repeat the above process until size of both the subarrays becomes 2.
 * If size of the two arrays is 2 then use below formula to get the median.
     Median = (max(ar1[0], ar2[0]) + min(ar1[1], ar2[1]))/2
@@ -1059,7 +1058,7 @@ int min(int x, int y)
 }
 ```
 
-** By doing binary search for the median**
+** By doing binary search for the median **
 
 The basic idea is that if you are given two arrays ar1[] and ar2[] and know the length of each, you can check whether an element ar1[i] is the median in constant time. Suppose that the median is ar1[i]. Since the array is sorted, it is greater than exactly i values in array ar1[]. Then if it is the median, it is also greater than exactly j = n – i – 1 elements in ar2[].
 
@@ -1147,9 +1146,9 @@ int main()
 
 We are given an array of n points in the plane, and the problem is to find out the closest pair of points in the array. 
 
-The Brute force solution is $O(n^2)$, compute the distance between each pair and return the smallest. We can calculate the smallest distance in O(nlogn) time using Divide and Conquer strategy.
+The Brute force solution is $$O(n^2)$$, compute the distance between each pair and return the smallest. We can calculate the smallest distance in O(nlogn) time using Divide and Conquer strategy.
 
-In this post, a $O(n(Logn)^2)$ approach is discussed. We will be discussing a O(nLogn) approach in a separate post.
+In this post, a $$O(n(Logn)^2)$$ approach is discussed. We will be discussing a O(nLogn) approach in a separate post.
 
 As a pre-processing step, input array is sorted according to x coordinates.
 
@@ -1163,7 +1162,7 @@ As a pre-processing step, input array is sorted according to x coordinates.
 
 5) Sort the array strip[] according to y coordinates. This step is O(nLogn). It can be optimized to O(n) by recursively sorting and merging.
 
-6) Find the smallest distance in strip[]. This is tricky. From first look, it seems to be a O(n^2) step, but it is actually O(n). It can be proved geometrically that for every point in strip, we only need to check at most 7 points after it (note that strip is sorted according to Y coordinate). See this for more analysis.
+6) Find the smallest distance in strip[]. This is tricky. From first look, it seems to be a $$O(n^2)$$ step, but it is actually O(n). It can be proved geometrically that for every point in strip, we only need to check at most 7 points after it (note that strip is sorted according to Y coordinate). See this for more analysis.
 
 7) Finally return the minimum of d and distance calculated in above step (step 6)
 
@@ -1306,6 +1305,7 @@ int main()
 Given two square matrices A and B of size n x n each, find their multiplication matrix.
 
 Following is a simple way to multiply two matrices.
+
 ```cpp
 void multiply(int A[][N], int B[][N], int C[][N])
 {
@@ -1348,7 +1348,7 @@ Addition and Subtraction of two matrices takes $$O(N^2)$$ time. So time complexi
 T(N) = 7T(N/2) +  $$O(N^2)$$
 
 From Master's Theorem, time complexity of above method is 
-$$O(N^(Log7))$$ which is approximately $$O(N^{2.8074})$$.
+$$O(N^{Log7})$$ which is approximately $$O(N^{2.8074})$$.
 
 Generally Strassen’s Method is not preferred for practical applications for following reasons.
 
@@ -1373,7 +1373,6 @@ The idea of binary search is to use the information that the array is sorted and
 3) Else If x is greater than the mid element, then x can only lie in right half subarray after the mid element. So we recur for right half.
 
 4) Else (x is smaller) recur for the left half.
-
 
 ```python
 # Python Program for recursive binary search.
@@ -1432,6 +1431,7 @@ def binarySearch(arr, l, r, x):
 #### [Merge Sort](http://geeksquiz.com/merge-sort/)
 
 MergeSort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merg() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.
+
 ```cpp
 /* C program for merge sort */
 #include<stdlib.h>
