@@ -1547,6 +1547,7 @@ The key process in quickSort is partition(). Target of partitions is, given an a
 Partition Algorithm:
 
 There can be many ways to do partition, following code adopts the method given in CLRS book. The logic is simple, we start from the leftmost element and keep track of index of smaller (or equal to) elements as i. While traversing, if we find a smaller element, we swap current element with arr[i]. Otherwise we ignore current element.
+
 ```cpp
 /* A typical recursive implementation of quick sort */
 #include<stdio.h>
@@ -1627,7 +1628,7 @@ We are given two arrays ar1[0…m-1] and ar2[0..n-1] and a number x, we need to 
 * Loop while l < m and r >= 0
     * If  abs(ar1[l] + ar2[r] - sum) < diff  then update diff and result 
     * Else if(ar1[l] + ar2[r] <  sum )  then l++
-    * Else r--  
+    * Else r - -  
        
 * Print the result. 
 
