@@ -393,6 +393,50 @@ Greedy is an algorithmic paradigm that builds up a solution piece by piece, alwa
 
 If a Greedy Algorithm can solve a problem, then it generally becomes the best method to solve that problem as the Greedy algorithms are in general more efficient than other techniques like Dynamic Programming. But Greedy algorithms cannot always be applied. For example, Fractional Knapsack problem can be solved using Greedy, but 0-1 Knapsack cannot be solved using Greedy.
 
+General Strategy:
+
+* Make a greedy choice
+* Prove that it is a safe move
+* Reduce to a subproblem
+* Solve the subproblem
+
+##### Covering points by segments
+
+Input: A set of n points x1, ..., xn
+
+Output: The minimum number of segments of unit length needed to cover all the points.
+
+Assume $$x1 \le x2 \le ... \le xn$$
+
+```cpp
+PointsCoverSorted(x1, ..., xn)
+R <- {}, i <- 1
+while i <= n:
+    [l, r] <- [xi, xi+1]
+    R <- R U {[l, r]}
+    i <- i + 1
+    while i <= n and xi <= r:
+        i <- i+1
+    return R
+```
+
+##### Fractional Knapsack
+
+```cpp
+Knapsack(W, w1, v1, ..., wn, vn)
+A <- [0, 0, ..., 0], V <- 0
+repeat n times:
+    if W = 0:
+        return (V, A)
+    select i with wi >0 and max vi/wi
+    a <- min(wi, W)
+    V <- V + a * vi/wi
+    wi <- wi - a
+    A[i] <- A[i] +a
+    W <- W - a
+return (V, A)
+```
+
 Following are some standard algorithms that are Greedy algorithms.
 
 * Kruskal’s Minimum Spanning Tree (MST): In Kruskal’s algorithm, we create a MST by picking edges one by one. The Greedy Choice is to pick the smallest weight edge that doesn’t cause a cycle in the MST constructed so far.
