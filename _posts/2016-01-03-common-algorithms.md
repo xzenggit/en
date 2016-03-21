@@ -1473,10 +1473,60 @@ def binarySearch(arr, l, r, x):
     # If we reach here, then the element was not present
     return -1
 ```
+#### Selection Sort
+
+Algorithms $$O(n^2)$$:
+
+* Find a minimum by scanning the array
+* Swap it with the first element
+* Repeat with the remaining part of the array
+
+Pseudo code:
+
+```python
+SelectionSort(A[1...n])
+for i from 1 to n:
+   minIndex <- i
+   for j from i+1 to n:
+      if A[j] < A[minIndex]:
+         minIndex <- j
+   swap(A[i], A[minIndex])
+```
 
 #### [Merge Sort](http://geeksquiz.com/merge-sort/)
 
+
+
 MergeSort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merg() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.
+
+Pseudo code ($$O(nlogn)$$:
+
+```Python
+MergeSort(A[1...n])
+if n=1:
+   return A
+m <- [n/2]
+B <- MergeSort(A[1...m])
+C <- MergeSort(A[m+1...n])
+A'<- Merge(B,C)
+return A'
+```
+
+Pseudo code (for merging two sorted arrays):
+
+```python
+Merge(B[1...p], C[1...q])
+D <- empty array of size p+q
+while B and C are both non-empty:
+   b <- the first element of B
+   c <- the first element of C
+   if b <= c:
+      move b from B to the end of D
+   else:
+      move c from C to the end of D
+move the rest of B and C to the end of D
+return D
+```
 
 ```cpp
 /* C program for merge sort */
@@ -1575,6 +1625,34 @@ int main()
     return 0;
 }
 ```
+
+### Counting Sort
+
+Ideas:
+
+* Assume that all elements of A[1...n] are integers from 1 to M.
+* By a single scan of the array A, count the number of occurrences of each 1 <= k <= M in the array A and sotre it in Count [k].
+* Using this information, fill in the sorted array A'.
+
+Pseudo code $$O(n+M)$$:
+
+```Python
+CountSort(A[1...n])
+Count[1...M] <- [0,...,0]
+for i from i to n:
+   Count[A[i]] <- Count[A[i]] + 1
+Pos[1...M] <- [0,...,0]
+Pos[1] <- 1
+for j from 2 to M:
+   Pos[j] <- Pos[j-1] + Count[j-1]
+for i from 1 to n:
+   A'[Pos[A[i]]] <- A[i]
+   Pos[A[i]] <- Pos[A[i]] + 1
+```
+
+Any comparison based sorting algorithm performs $$\Omega(nlogn)$$ comparisons in the worst case to sort n objects.
+
+
 
 #### [QuickSort](http://geeksquiz.com/quick-sort/)
 
