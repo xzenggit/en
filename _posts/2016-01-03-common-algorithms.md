@@ -1652,8 +1652,6 @@ for i from 1 to n:
 
 Any comparison based sorting algorithm performs $$\Omega(nlogn)$$ comparisons in the worst case to sort n objects.
 
-
-
 #### [QuickSort](http://geeksquiz.com/quick-sort/)
 
 Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways.
@@ -1667,6 +1665,45 @@ Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an elemen
 4) Pick median as pivot.
 
 The key process in quickSort is partition(). Target of partitions is, given an array and an element x of array as pivot, put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be done in linear time.
+
+Pseudo code for partition:
+
+```Python
+Partition(A,l,r)
+x <- A[l]
+j <- l
+for i from l+1 to r:
+   if A[i] <= x:
+      j <- j+1
+      swap A[j] and A[i]
+swap A[l] and A[j]
+return j
+```
+Random Pivot:
+
+```Python
+RandomizedQuickSort(A, l, r)
+if l >= r:
+   return
+k <- random number between l and r
+swap A[l] and A[k]
+m <- Parition(A,l,r)
+RandomizedQuickSort(A, l, m-1)
+RandomizedQuickSort(A, m+1, r)
+```
+Quick Sort pseudo code:
+
+```python
+QuickSort(A, l, r)
+while l < r:
+   m <- Partition(A, l, r)
+   if (m-l) < (r-m):
+      QuickSort(A,l,m-1)
+      l <- m+1
+   else:
+      QuickSort(A, m+1, r)
+      r <- m-1
+```
 
 Partition Algorithm:
 
