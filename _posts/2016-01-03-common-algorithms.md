@@ -1702,6 +1702,26 @@ while l < r:
       r <- m-1
 ```
 
+If all the elements of the given array are equal to each other, then it's $$\Theta(n^2)$$.
+
+To handle equal elements, we can replace the 
+
+```python
+m <- Partition (A, l, r)
+```
+
+with the line
+
+```python
+(m1, m2) <- Partition3(A, l, r)
+```
+
+such that
+
+* for all l <= k <= m1-1, A[k] < x
+* for all m1 <= k <= m2, A[k] = x
+* for all m1+1 <= k <= r, A[k] > x
+
 Partition Algorithm:
 
 There can be many ways to do partition, following code adopts the method given in CLRS book. The logic is simple, we start from the leftmost element and keep track of index of smaller (or equal to) elements as i. While traversing, if we find a smaller element, we swap current element with arr[i]. Otherwise we ignore current element.
