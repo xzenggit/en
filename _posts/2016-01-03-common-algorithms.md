@@ -727,8 +727,6 @@ Algorithm:
 
 The idea of using key values is to pick the minimum weight edge from cut. The key values are used only for vertices which are not yet included in MST, the key value for these vertices indicate the minimum weight edges connecting them to the set of vertices included in MST.
 
-
-
 ```cpp
 // A C / C++ program for Prim's Minimum Spanning Tree (MST) algorithm. 
 // The program is for adjacency matrix representation of the graph
@@ -992,7 +990,7 @@ The median of a finite list of numbers can be found by arranging all the numbers
 
 Let us see different methods to get the median of two sorted arrays of size n each. Since size of the set for which we are looking for median is even (2n), we are taking average of middle two numbers in all below solutions.
 
-** By comparing the medians of two arrays ** 
+**By comparing the medians of two arrays** 
 This method works by first getting medians of the two sorted arrays and then comparing them.
 
 Let ar1 and ar2 be the input arrays.
@@ -1104,7 +1102,7 @@ int min(int x, int y)
 }
 ```
 
-** By doing binary search for the median **
+**By doing binary search for the median**
 
 The basic idea is that if you are given two arrays ar1[] and ar2[] and know the length of each, you can check whether an element ar1[i] is the median in constant time. Suppose that the median is ar1[i]. Since the array is sorted, it is greater than exactly i values in array ar1[]. Then if it is the median, it is also greater than exactly j = n – i – 1 elements in ar2[].
 
@@ -1473,6 +1471,7 @@ def binarySearch(arr, l, r, x):
     # If we reach here, then the element was not present
     return -1
 ```
+
 #### Selection Sort
 
 Algorithms $$O(n^2)$$:
@@ -1494,8 +1493,6 @@ for i from 1 to n:
 ```
 
 #### [Merge Sort](http://geeksquiz.com/merge-sort/)
-
-
 
 MergeSort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merg() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.
 
@@ -1626,7 +1623,7 @@ int main()
 }
 ```
 
-### Counting Sort
+#### Counting Sort
 
 Ideas:
 
