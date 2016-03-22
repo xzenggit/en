@@ -1722,6 +1722,18 @@ such that
 * for all m1 <= k <= m2, A[k] = x
 * for all m1+1 <= k <= r, A[k] > x
 
+Pseudo code:
+```python
+RandomizedQuickSort(A,l,r)
+if l >= r:
+   return
+k <- random number between l and r
+swap A[l] and A[k]
+(m1, m2) <- Partition3(A,l,r)
+RandomizedQuickSort(A,l,m1-1)
+RandomizedQuickSort(A,m2+1,r)
+```
+
 Partition Algorithm:
 
 There can be many ways to do partition, following code adopts the method given in CLRS book. The logic is simple, we start from the leftmost element and keep track of index of smaller (or equal to) elements as i. While traversing, if we find a smaller element, we swap current element with arr[i]. Otherwise we ignore current element.
