@@ -943,9 +943,112 @@ int main()
 
 A typical Divide and Conquer algorithm solves a problem using following three steps.
 
-* Divide: Break the given problem into subproblems of same type.
+* Divide: Break the given problem into non-overlapping subproblems of same type.
 * Conquer: Recursively solve these subproblems
 * Combine: Appropriately combine the answers
+
+** Linear Search: Searching in an array ** 
+
+Input: An array A with n elements; a key k.
+
+Output: An index, i, where A[i]=k. If there is no such i, return NOT_FOUND.
+
+```
+# Recursive Solution, worst-case $$\Theta(n)$$
+LinearSearch(A, low, high, key):
+if high < low:
+    return NOT_FOUND
+if A[low] == key:
+    return low
+return LinearSearch(A, low+1, high, key)
+
+# Iterative Version
+LinearSearchIt(A, low, high, key)
+for i from low to high:
+    if A[i] == key:
+        return i
+return NOT_FOUND
+```
+
+** Binary Search: Searching in a sorted array **
+
+Input: A sorted array A[low ... high] (low $$\le$$ i < high: A[i] $$\le$$ A[i+1]). A key k.
+
+Output: An index, i, (low $$\le$$ i $$\le$$ high) where A[i] = k. Otherwise, the greatest index i, where A[i] < k. Otherwise (k < A[low]), the result is low - 1.
+
+```
+# Binary Search - recursive version: $$\Theta(log(n))$$
+BinarySearch(A, low, high, key)
+if high < low:
+    return low - 1
+mid <- floor(low + (high-low)/2)
+if key = A[mid]:
+    return mid
+else if key < A[mid]:
+    return BinarySearch(A, low, mid-1, key)
+else:
+    return BinarySearch(A, mid + 1, high, key)
+
+# Iterative Version
+BinarySearchIt(A, low, high, key)
+while low <= high:
+    mid <- floor(low + (high-low)/2)
+    if key = A[mid]:
+        return mid
+    else if key < A[mid]:
+        high = mid - 1
+    else:
+        low = mid + 1
+return low - 1
+```
+
+** Multiplying polynomials **
+
+Input: Two n-1 degree polynomials $$a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \ldots + a_1 x+a_0$$, $$b_{n-1}x^{n-1} + b_{n-2}x^{n-2}+\ldots+b_1x+b_0$$
+
+Output: The product polynomial $$c_{2n-2}x^{2n-2} +c_{2n-3}x^{2n-3} +\ldots+c_1x+c_0$$, where $$c_{2n-2} = a_{n-1}b_{n-1}, c_{2n-3}=a_{n-1}b_{n-2}+a_{n-2}b_{n-1}, \ldots, c_2 = a_2b_0+a_1b_1+a_0b_2, c_1=a_1b_0+a_0b_1, c_0 = a_0b_0$$.
+
+```
+# Naive polynomial multiplying $$O(n^2)$$
+MultPoly(A, B, n)
+pair = Array[n][n]
+for i = 0 to n-1:
+    for j = 0 to n-1:
+        pair[i][j] = A[i]*B[j]
+product = Array[2n-1]
+for i = 0 to 2n-1:
+    product[i] = 0
+for i = 0 to n-1:
+    for j=i to n-1:
+        product[i+j] = product[i+j] + pair[i][j]
+return product
+```
+
+Naive Divide and Conquer:
+
+Let $$ A(x) = D_1(x) x^{n/2} + D_0(x)$$ where $$D_1(x) = a_{n-1}x^{n/2-1}+a_{n-2}x^{n/2-2} + \ldots + a_{n/2}, D_0(x) = a_{n/2-1}x^{n/2-1}+a_{n/2-2}x^{n/2-1}+\ldots+a_0$$, let $$B(x) = E_1(x)x^{n/2}+E_0(x)$$, $$E_1(x)$$ and $$E_0(x)$$ is similar as $$D_1(x)$$ and $$D_0(x)$$, then $$AB=(D_1x^{n/2}+D_0)(E_1x^{n/2}+E_0)
+
+```
+# Naive Divide and Conquer for polynomial multiplying $$\Theta(n^2)$$
+Function Mult2(A, B, n, al, bl)
+R = array[0...2n-2]
+if n = 1:
+    R[0] = A[al] * B[bl]
+    return R
+R[0...n-2] = Mult2(A, B, n/2, al, bl)
+R[n...2n-2] = Mult2(A, B, n/2, al+n/2, bl+n/2)
+D0E1 = Mult2(A, B, n/2, al, bl+n/2)
+D1E0 = Mult2(A, B, n/2, al+n/2, b1)
+R[n/2...n+n/2-2] += D1E0 + D0E1
+```
+
+Karatsuba approach:
+
+$$ A(x)= a_1 x + a_0$$, $$B(x) = b_1x+b_0$$, $$C(x) = a_1 b_1 x^2 + (a_1 b_0 + a_0 b_1) x + a_0 b_0$$, needs 4 multiplicaitons.
+
+Rewrite as $$ C(x) = a_1 b_1 x^2 + ((a_1 + a_0)(b_1 + b_0) -a_1 b_1 -a_0 b_0)x+ a_0 b_0$$ needs 3 multiplications.
+
+
 
 Following are some standard algorithms that are Divide and Conquer algorithms.
 
