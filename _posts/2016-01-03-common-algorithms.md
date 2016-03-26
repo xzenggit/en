@@ -727,8 +727,6 @@ Algorithm:
 
 The idea of using key values is to pick the minimum weight edge from cut. The key values are used only for vertices which are not yet included in MST, the key value for these vertices indicate the minimum weight edges connecting them to the set of vertices included in MST.
 
-
-
 ```cpp
 // A C / C++ program for Prim's Minimum Spanning Tree (MST) algorithm. 
 // The program is for adjacency matrix representation of the graph
@@ -1095,7 +1093,7 @@ The median of a finite list of numbers can be found by arranging all the numbers
 
 Let us see different methods to get the median of two sorted arrays of size n each. Since size of the set for which we are looking for median is even (2n), we are taking average of middle two numbers in all below solutions.
 
-** By comparing the medians of two arrays ** 
+**By comparing the medians of two arrays** 
 This method works by first getting medians of the two sorted arrays and then comparing them.
 
 Let ar1 and ar2 be the input arrays.
@@ -1207,7 +1205,7 @@ int min(int x, int y)
 }
 ```
 
-** By doing binary search for the median **
+**By doing binary search for the median**
 
 The basic idea is that if you are given two arrays ar1[] and ar2[] and know the length of each, you can check whether an element ar1[i] is the median in constant time. Suppose that the median is ar1[i]. Since the array is sorted, it is greater than exactly i values in array ar1[]. Then if it is the median, it is also greater than exactly j = n – i – 1 elements in ar2[].
 
@@ -1577,9 +1575,58 @@ def binarySearch(arr, l, r, x):
     return -1
 ```
 
+#### Selection Sort
+
+Algorithms $$O(n^2)$$:
+
+* Find a minimum by scanning the array
+* Swap it with the first element
+* Repeat with the remaining part of the array
+
+Pseudo code:
+
+```python
+SelectionSort(A[1...n])
+for i from 1 to n:
+   minIndex <- i
+   for j from i+1 to n:
+      if A[j] < A[minIndex]:
+         minIndex <- j
+   swap(A[i], A[minIndex])
+```
+
 #### [Merge Sort](http://geeksquiz.com/merge-sort/)
 
 MergeSort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merg() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.
+
+Pseudo code ($$O(nlogn)$$:
+
+```Python
+MergeSort(A[1...n])
+if n=1:
+   return A
+m <- [n/2]
+B <- MergeSort(A[1...m])
+C <- MergeSort(A[m+1...n])
+A'<- Merge(B,C)
+return A'
+```
+
+Pseudo code (for merging two sorted arrays):
+
+```python
+Merge(B[1...p], C[1...q])
+D <- empty array of size p+q
+while B and C are both non-empty:
+   b <- the first element of B
+   c <- the first element of C
+   if b <= c:
+      move b from B to the end of D
+   else:
+      move c from C to the end of D
+move the rest of B and C to the end of D
+return D
+```
 
 ```cpp
 /* C program for merge sort */
@@ -1679,6 +1726,32 @@ int main()
 }
 ```
 
+#### Counting Sort
+
+Ideas:
+
+* Assume that all elements of A[1...n] are integers from 1 to M.
+* By a single scan of the array A, count the number of occurrences of each 1 <= k <= M in the array A and sotre it in Count [k].
+* Using this information, fill in the sorted array A'.
+
+Pseudo code $$O(n+M)$$:
+
+```Python
+CountSort(A[1...n])
+Count[1...M] <- [0,...,0]
+for i from i to n:
+   Count[A[i]] <- Count[A[i]] + 1
+Pos[1...M] <- [0,...,0]
+Pos[1] <- 1
+for j from 2 to M:
+   Pos[j] <- Pos[j-1] + Count[j-1]
+for i from 1 to n:
+   A'[Pos[A[i]]] <- A[i]
+   Pos[A[i]] <- Pos[A[i]] + 1
+```
+
+Any comparison based sorting algorithm performs $$\Omega(nlogn)$$ comparisons in the worst case to sort n objects.
+
 #### [QuickSort](http://geeksquiz.com/quick-sort/)
 
 Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways.
@@ -1692,6 +1765,77 @@ Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an elemen
 4) Pick median as pivot.
 
 The key process in quickSort is partition(). Target of partitions is, given an array and an element x of array as pivot, put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be done in linear time.
+
+Pseudo code for partition:
+
+```Python
+Partition(A,l,r)
+x <- A[l]
+j <- l
+for i from l+1 to r:
+   if A[i] <= x:
+      j <- j+1
+      swap A[j] and A[i]
+swap A[l] and A[j]
+return j
+```
+Random Pivot:
+
+```Python
+RandomizedQuickSort(A, l, r)
+if l >= r:
+   return
+k <- random number between l and r
+swap A[l] and A[k]
+m <- Parition(A,l,r)
+RandomizedQuickSort(A, l, m-1)
+RandomizedQuickSort(A, m+1, r)
+```
+Quick Sort pseudo code:
+
+```python
+QuickSort(A, l, r)
+while l < r:
+   m <- Partition(A, l, r)
+   if (m-l) < (r-m):
+      QuickSort(A,l,m-1)
+      l <- m+1
+   else:
+      QuickSort(A, m+1, r)
+      r <- m-1
+```
+
+If all the elements of the given array are equal to each other, then it's $$\Theta(n^2)$$.
+
+To handle equal elements, we can replace the 
+
+```python
+m <- Partition (A, l, r)
+```
+
+with the line
+
+```python
+(m1, m2) <- Partition3(A, l, r)
+```
+
+such that
+
+* for all l <= k <= m1-1, A[k] < x
+* for all m1 <= k <= m2, A[k] = x
+* for all m1+1 <= k <= r, A[k] > x
+
+Pseudo code:
+```python
+RandomizedQuickSort(A,l,r)
+if l >= r:
+   return
+k <- random number between l and r
+swap A[l] and A[k]
+(m1, m2) <- Partition3(A,l,r)
+RandomizedQuickSort(A,l,m1-1)
+RandomizedQuickSort(A,m2+1,r)
+```
 
 Partition Algorithm:
 
