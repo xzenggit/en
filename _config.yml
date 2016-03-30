@@ -96,15 +96,13 @@ index:
 
 include: ["_pages"]
 
-markdown: kramdown
+markdown: maruku
 highlighter: rouge
 #kramdown
 #redcarpet:
 #  extensions: ["autolink", "fenced_code_blocks", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes", "no_intra_emphasis"]
 # highlighter: rouge
-kramdown:
-  input: GFM
-  math_engine: mathjax
+
 
 excerpt_separator: <!--more-->
 
