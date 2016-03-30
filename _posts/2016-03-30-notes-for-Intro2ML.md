@@ -9,7 +9,7 @@ use_math: true
 
 ### 1. [Naive Bayes](http://scikit-learn.org/stable/modules/naive_bayes.html)
 
-\[P(y \mid x_1, \dots, x_n) = \frac{P(y) P(x_1, \dots x_n \mid y)}{P(x_1, \dots, x_n)}$\]
+\[P(y \mid x_1, \dots, x_n) = \frac{P(y) P(x_1, \dots x_n \mid y)}{P(x_1, \dots, x_n)}\]
 Using the naive independence assumption that
 $ P(x_i | y, x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_n) = P(x_i | y)$,
 for all i, this relationship is simplified to
