@@ -1,7 +1,8 @@
 #
 # Basic settings.
 #
-# you need to change the baseurl to your repo
+# url: http://localhost:4000
+# baseurl: ""
 baseurl: /cn
 title: notebook
 description: This is my personal notebook ^_^
@@ -68,9 +69,12 @@ paginate_path: page/:num
 #
 # Social.
 #
-share_buttons: false
+share_buttons:
+  twitter: true
+  facebook: false   # needs ogp.fb.app_id
+  hatena: false
 ogp:
-  image_url: http://xzenggit.github.io/en/
+  image_url: http://xzenggit.github.io/cn/
   fb:
     admin: # facebook admin id
     app_id: # facebook application id
@@ -79,6 +83,7 @@ ogp:
 # Gems.
 #
 gems:
+  - jekyll-paginate
   - jemoji
 
 #
@@ -92,9 +97,9 @@ gems:
 include: ["_pages"]
 
 markdown: kramdown
-#redcarpet:
-#  extensions: ["autolink", "fenced_code_blocks", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes", "no_intra_emphasis"]
-highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 excerpt_separator: <!--more-->
 
