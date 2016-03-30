@@ -96,7 +96,7 @@ index:
 
 include: ["_pages"]
 
-markdown: maruku
+markdown: kramdown
 highlighter: rouge
 #kramdown
 #redcarpet:
