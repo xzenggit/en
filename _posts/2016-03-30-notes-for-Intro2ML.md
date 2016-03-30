@@ -4,19 +4,19 @@ title: Notes for Introduction to Machine Learning
 tags: machine learning udacity
 ---
 
-## Notes for [Introduction for Machine Learning] (https://www.udacity.com/course/intro-to-machine-learning--ud120)
+## Notes for [Introduction for Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120)
 
 ### 1. [Naive Bayes](http://scikit-learn.org/stable/modules/naive_bayes.html)
 
-$$
+$
 P(y \mid x_1, \dots, x_n) = \frac{P(y) P(x_1, \dots x_n \mid y)}
                                  {P(x_1, \dots, x_n)}
-$$
+$
 Using the naive independence assumption that
-$$ P(x_i | y, x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_n) = P(x_i | y)$$,
+$ P(x_i | y, x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_n) = P(x_i | y)$,
 for all i, this relationship is simplified to
-$$P(y \mid x_1, \dots, x_n) = \frac{P(y) \prod_{i=1}^{n} P(x_i \mid y)}
-                                 {P(x_1, \dots, x_n)}$$
+$P(y \mid x_1, \dots, x_n) = \frac{P(y) \prod_{i=1}^{n} P(x_i \mid y)}
+                                 {P(x_1, \dots, x_n)}$
 
 Naive Bayes learners and classifiers can be extremely fast compared to more sophisticated methods. The decoupling of the class conditional feature distributions means that each distribution can be independently estimated as a one dimensional distribution. This in turn helps to alleviate problems stemming from the curse of dimensionality.
 On the flip side, although naive Bayes is known as a decent classifier, it is known to be a bad estimator, so the probability outputs from predict_proba are not to be taken too seriously.
@@ -48,7 +48,7 @@ SVM parameters:
 
 * Kernel: linear, rbf, or others.
 * Gamma parameter: defines how much influence a single traning example has. The larger the `gamma` is, the closer other examples must be to be affected.
-* C parameter: controls tradeoff between smooth decision boundary and classifying training points correctly. A low `c` makes the decision surface smooth, while a high `c` aims at classifying all training examples correctly.
+* C parameter: controls tradeoff between smooth decision boundary and classifying training points correctly. A low `C` makes the decision surface smooth, while a high `C` aims at classifying all training examples correctly.
 
 Naive Bayes is great for text--it’s faster and generally gives better performance than an SVM for this particular problem.
 
@@ -68,7 +68,7 @@ acc = accuracy_score(pred, labels_test)
 
 Entropy: a measure of impurity in a bunch of exmaples, which controls how a Decision Tree decides where to split the data.
 
-Entropy = $$- \sum_i (p_i)log_2^{p_i} $$
+Entropy = $- \sum_i (p_i)log_2^{p_i}$
 
 Information gain = entropy(parent) - [weighted average] entropy(children)
 
@@ -92,7 +92,7 @@ acc = accuracy_score(pred, labels_test)
 
 ### 5. [Regressions](http://scikit-learn.org/stable/modules/linear_model.html)
 
-SSE (sum of squared error) = $$\sum (real-predicted)^2$$.
+SSE (sum of squared error) = $\sum (real-predicted)^2$.
 
 R-squared of a regression: "how much of my change in the output is explained by the change in my input?"
 
