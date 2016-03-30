@@ -1,3 +1,9 @@
+---
+layout: post
+title: Notes for Introduction to Machine Learning
+tags: machine learning udacity
+---
+
 ## Notes for [Introduction for Machine Learning] (https://www.udacity.com/course/intro-to-machine-learning--ud120)
 
 ### 1. [Naive Bayes](http://scikit-learn.org/stable/modules/naive_bayes.html)
