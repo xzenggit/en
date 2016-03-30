@@ -98,6 +98,8 @@ include: ["_pages"]
 
 markdown: kramdown
 highlighter: rouge
+kramdown:
+  math_engine: mathjax
 #kramdown
 #redcarpet:
 #  extensions: ["autolink", "fenced_code_blocks", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes", "no_intra_emphasis"]
