@@ -1,15 +1,15 @@
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           /
+permalink:           pretty
 # relative_permalinks: true
 
 # Setup
 title:               notebook
 tagline:             'This is my personal notebook ^_^'
 description:         ''
-# url:                 http://lanyon.getpoole.com
-baseurl:             /cn
+url:                 xzenggit.github.io/cn
+baseurl:             /
 paginate:            5
 
 # About/contact
