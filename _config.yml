@@ -6,7 +6,7 @@ permalink:           pretty
 title:               notebook
 tagline:             'This is my personal notebook ^_^'
 description:         ''
-url:                 xzenggit.github.io/cn/
+url:                 xzenggit.github.io/cn
 baseurl:             /cn
 paginate:            5
 
