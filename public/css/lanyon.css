@@ -433,6 +433,19 @@ a.pagination-item:hover {
           transform: translateX(-14rem);
 }
 
+/* Tags */
+
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.tags li {
+  float: left;
+}
+
 
 /*
  * Themes
