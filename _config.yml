@@ -1,115 +1,22 @@
+# Permalinks
 #
-# Basic settings.
-#
-# url: http://localhost:4000
-# baseurl: ""
-baseurl: /cn
-title: notebook
-description: This is my personal notebook ^_^
-avatar: /assets/img/ogp.png
-language: cn
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
 
-#
-# Icons
-#
-icons:
-  rss: true
-  email:
-  github: xzenggit
-  bitbucket:
-  twitter: 
-  facebook:
-  google_plus:
-  tumblr:
-  behance:
-  dribbble:
-  flickr:
-  instagram:
-  linkedin: http://www.linkedin.com/in/zengx
-  pinterest:
-  reddit:
-  soundcloud:
-  stack_exchange:  # full URL
-  steam:
-  wordpress:
-  youtube:
+# Setup
+title:               Lanyon
+tagline:             'A Jekyll theme'
+description:         'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+url:                 http://lanyon.getpoole.com
+baseurl:             ''
+paginate:            5
 
-#
-# Prettify url.
-#
-permalink: pretty
+# About/contact
+author:
+  name:              Mark Otto
+  url:               https://twitter.com/mdo
+  email:             markdotto@gmail.com
 
-#
-# Scripts.
-#
-google_analytics: # e.g. UA-000000-01
-disqus:
-
-#
-# Localizations.
-#
-str_next: Next
-str_prev: Prev
-str_read_more: Read more...
-str_search: Search
-str_recent_posts: Recent posts
-str_show_all_posts: Show all posts
-
-#
-# Recent posts.
-#
-recent_posts_num: 10
-
-#
-# Pagination.
-#
-paginate: 10
-paginate_path: page/:num
-
-#
-# Social.
-#
-share_buttons:
-  twitter: true
-  facebook: false   # needs ogp.fb.app_id
-  hatena: false
-ogp:
-  image_url: http://xzenggit.github.io/cn/
-  fb:
-    admin: # facebook admin id
-    app_id: # facebook application id
-
-#
-# Gems.
-#
-gems:
-  - jekyll-paginate
-  - jemoji
-
-#
-# Styles: see "_sass/base/_variables.scss"
-#
-
-#
-# !! Danger zone !!
-#
-
-include: ["_pages"]
-
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-
-excerpt_separator: <!--more-->
-
-sass:
-  sass_dir: _sass
-  style: :compressed # or :expanded
-
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - vendor
+# Custom vars
+version:             1.0.0
