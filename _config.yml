@@ -8,8 +8,8 @@ permalink:           pretty
 title:               notebook
 tagline:             'This is my personal notebook ^_^'
 description:         ''
-url:                 xzenggit.github.io
-baseurl:             /cn
+url:                 
+baseurl:             xzenggit.github.io/cn/
 paginate:            5
 
 # About/contact
