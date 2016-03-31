@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python notes
-tags: python
+tags: Python
 ---
 
 This is my personal python notes.
