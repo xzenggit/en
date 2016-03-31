@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Introducing Lanyon
+tags: 
+- test
+- test again
 ---
 
 $\sum_i^2 x_i = M$
