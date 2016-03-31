@@ -20,7 +20,7 @@ title: Archive
     <li> 
       <time>{{ post.date | date:"%d %b" }}</time> 
       <span style="float: right;">
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
       </span>
     </li>
 {% endfor %}
