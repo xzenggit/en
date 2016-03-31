@@ -6,8 +6,8 @@ permalink:           pretty
 # Setup
 title:               notebook
 tagline:             'This is my personal notebook ^_^'
-url:                 xzenggit.github.io/cn/
-baseurl:             /cn
+url:                 xzenggit.github.io/en/
+baseurl:             /en
 paginate:            5
 
 # About/contact
