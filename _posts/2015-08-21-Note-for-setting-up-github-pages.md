@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Notes for setting up github pages
-tags: github gh-pages
+tags: gh-pages
 ---
 
 The following is how I setup the github papges.

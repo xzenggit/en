@@ -1,14 +1,14 @@
 ---
 layout: post
 title: Notes for Introduction to Machine Learning
-tags: machine learning udacity
+tags: MachineLearning udacity
 ---
 
 ## Notes for [Introduction for Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120)
 
 ### 1. [Naive Bayes](http://scikit-learn.org/stable/modules/naive_bayes.html)
 
-\[P(y \mid x_1, \dots, x_n) = \frac{P(y) P(x_1, \dots x_n \mid y)}{P(x_1, \dots, x_n)}\]
+$P(y \mid x_1, \dots, x_n) = \frac{P(y) P(x_1, \dots x_n \mid y)}{P(x_1, \dots, x_n)}$
 Using the naive independence assumption that
 $ P(x_i | y, x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_n) = P(x_i | y)$,
 for all i, this relationship is simplified to
@@ -65,7 +65,7 @@ acc = accuracy_score(pred, labels_test)
 
 Entropy: a measure of impurity in a bunch of exmaples, which controls how a Decision Tree decides where to split the data.
 
-Entropy = $- \sum_i (p_i)log_2^{p_i}$
+Entropy = $- \sum_i (p_i)log_2(p_i)$
 
 Information gain = entropy(parent) - [weighted average] entropy(children)
 

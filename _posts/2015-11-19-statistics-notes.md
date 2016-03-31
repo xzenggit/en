@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Probability and Statistics notes
-tags: probability statistics
+tags: statistics
 ---
 
 ### Probability and Statistics lectures

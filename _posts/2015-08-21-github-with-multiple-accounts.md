@@ -1,7 +1,7 @@
 ---
 layout: post
 title: github with multiple accounts
-tags: github multi-accounts
+tags: git
 ---
 
 I like github. Really. 

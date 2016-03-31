@@ -1,7 +1,7 @@
 ---
 layout: post
 title: LaTeX notes
-tags: LaTeX notes
+tags: LaTeX
 ---
 
 Useful latex resources:

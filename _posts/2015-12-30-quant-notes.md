@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Notes for quant jobs
-tags: quant job
+tags: quant
 ---
 
 ## Some quant-related journals:

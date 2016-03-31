@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Data Science Cheetsheets
-tags: data science
+tags: DataScience CheetSheets
 ---
 
 * [Python 2.7 quick reference sheet](http://www.astro.up.pt/~sousasag/Python_For_Astronomers/Python_qr.pdf)
