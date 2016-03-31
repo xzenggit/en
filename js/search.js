@@ -1,6 +1,6 @@
-<script src="{{ site.baseurl }}/js/lunr.min.js"></script>
+<script src="/js/lunr.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="{{ site.baseurl }}/js/search.js"></script>
+<script src="/js/search.js"></script>
 
 jQuery(function() {
   // Initalize lunr with the fields it will be searching on. I've given title
