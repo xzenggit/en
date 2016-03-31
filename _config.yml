@@ -1,0 +1,20 @@
+name:                notebook
+description:         ''
+permalink:           pretty
+
+
+# Setup
+title:               notebook
+tagline:             'This is my personal notebook ^_^'
+url:                 xzenggit.github.io/cn/
+baseurl:             /cn
+paginate:            5
+
+# About/contact
+author:
+  name:              Xiangming Zeng
+  url:               ''
+  email:             ''
+
+# Custom varsß
+version:             1.0.0
