@@ -3,7 +3,7 @@ layout: post
 title: Introducing Lanyon
 ---
 
-$\sum_i^2 x_i = M$
+\\(\sum_i^2 x_i = M\\)
 
 ```python
 import numpy as np
