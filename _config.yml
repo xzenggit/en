@@ -10,6 +10,12 @@ url:                 xzenggit.github.io/en/
 baseurl:             /en
 paginate:            5
 
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 # About/contact
 author:
   name:              Xiangming Zeng
