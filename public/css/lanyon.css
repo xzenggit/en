@@ -465,6 +465,7 @@ a.pagination-item:hover {
   font-size: 13px;
 }
 
+/*
 .tag::before {
   background: #fff;
   border-radius: 10px;
@@ -497,6 +498,9 @@ a.pagination-item:hover {
 .tag:hover::after {
   border-left-color: #f05422;
 }
+*/
+
+
 /*
  * Themes
  *
