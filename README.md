@@ -2,7 +2,7 @@
 
 我的中文记事本。
 
-Source: https://github.com/poole/lanyon
+Based on: https://github.com/poole/lanyon
 
 ## License
 

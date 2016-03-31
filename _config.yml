@@ -1,8 +1,6 @@
-# Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
+name:                notebook
 permalink:           pretty
-# relative_permalinks: true
+
 
 # Setup
 title:               notebook
@@ -18,5 +16,5 @@ author:
   url:               ''
   email:             ''
 
-# Custom vars
+# Custom varsß
 version:             1.0.0
