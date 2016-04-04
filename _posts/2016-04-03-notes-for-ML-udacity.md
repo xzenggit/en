@@ -42,7 +42,7 @@ ID3 algorithm:
 * Loop the whole process until STOP.
 * Prone if overfitting
 
-Gain(S, A) = Entropy(S) - $\sum_r \frac{abs(S_r)}{abs(S)}Entropy(S_r)$
+Gain(S, A) = Entropy(S) - $\sum_r \frac{\vert S_r \vert}{\vert S\vert}Entropy(S_r)$
 
 Entropy = $-\sum_rP(r)log(P(r))$
 
@@ -296,7 +296,7 @@ VS(s) is $\epsilon$-exhuasted iff $\forall h \in$ VS(s), $error_D(h) \le \epsilo
 
 Haussler Theorem - Bound True Error: Let $error_D(h_1,..., h_k \in H) > \epsilon$ be the high true error, how much data do we need to "knock off"  these hypothesis?
 
-$ P(h_i(x) = c(x)) \le 1-\epsilon$, if everything is independent, we have P($h_i$ consistent with c on m exmaples) $\le (1-\epsilon)^m$. P(at least one of $h_i$ consistent with c on m exmaples) $\le k(1-\epsilon)^m \le abs(H) (1-\epsilon)^m \le abs(H) e^{-\epsilon m} \le \delta$. This is the upper bound that version space is not $\epsilon$-exhusted after m samples. That is, $m \le \frac{1}{\epsilon} (ln(abs(H)) + ln \frac{1}{\delta})$.
+$ P(h_i(x) = c(x)) \le 1-\epsilon$, if everything is independent, we have P($h_i$ consistent with c on m exmaples) $\le (1-\epsilon)^m$. P(at least one of $h_i$ consistent with c on m exmaples) $\le k(1-\epsilon)^m \le \vert H\vert (1-\epsilon)^m \le \vert H\vert e^{-\epsilon m} \le \delta$. This is the upper bound that version space is not $\epsilon$-exhusted after m samples. That is, $m \le \frac{1}{\epsilon} (ln(\vert H\vert) + ln \frac{1}{\delta})$.
 
 Because $-\epsilon \ge ln(1-\epsilon)$, $(1-\epsilon)^m \le e^{-\epsilon m}$.
 
