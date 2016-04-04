@@ -338,7 +338,7 @@ Output (suppose P(h) is uniform):
 * Representing and resasoning with probabilities
 * Bayesian Networks
 
-X is conditionally independent of Y given Z if the probability distribution governing X is independent of the value of Y given the value of Z; that is P(X\vert Y,Z) = P(X\vert Z).
+X is conditionally independent of Y given Z if the probability distribution governing X is independent of the value of Y given the value of Z; that is $P(X\vert Y,Z) = P(X\vert Z)$.
 
 Belief Networks aka Bayesian Networks aka Graphical Models
 
@@ -352,8 +352,8 @@ Why sampling?
 Inferencing rules:
 
 * Marginalization: $P(x) = \sum_y P(x, y)$
-* Chain rule: P(x, y) = P(x)P(y\vert x)
-* Bayes rule: P(y\vert x) = P(x\vert y)P(y)/P(x)
+* Chain rule: P(x, y) = $P(x)P(y\vert x)$
+* Bayes rule: $P(y\vert x) = P(x\vert y)P(y)/P(x)$
 
 ### 11. Randomized optimization
 
