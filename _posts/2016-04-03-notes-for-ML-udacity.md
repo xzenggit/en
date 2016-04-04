@@ -42,7 +42,7 @@ ID3 algorithm:
 * Loop the whole process until STOP.
 * Prone if overfitting
 
-Gain(S, A) = Entropy(S) - $\sum_r \frac{\abs{S_r}}{\abs{S}}}Entropy(S_r)$
+Gain(S, A) = Entropy(S) - $\sum_r \frac{\abs{S_r}}{\abs{S}}Entropy(S_r)$
 
 Entropy = $-\sum_rP(r)log(P(r))$
 
