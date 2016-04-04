@@ -326,19 +326,19 @@ $P(a,b) = P(a\vert b) P(b) = P(b\vert a) P(a)$
 
 P(D\vert h) is data given the hypothesis, P(h) is the prior on data, P(D) is prior on data.
 
-For each $h \in H$, calculate $P(h|D) = P(D \vert h) P(h) / P(D)$. 
+For each $h \in H$, calculate $P(h\vert D) = P(D \vert h) P(h) / P(D)$. 
 
 Output (suppose P(h) is uniform):
 
 * map -> maximum posterior: $h_m = argmax P(h\vert D)$
-* machine learning -> maximum likelihood: $h_ML = argmax P(D|h)$. 
+* machine learning -> maximum likelihood: $h_ML = argmax P(D\vert h)$. 
 
 ### 10. Bayesian inference
 
 * Representing and resasoning with probabilities
 * Bayesian Networks
 
-X is conditionally independent of Y given Z if the probability distribution governing X is independent of the value of Y given the value of Z; that is P(X|Y,Z) = P(X|Z).
+X is conditionally independent of Y given Z if the probability distribution governing X is independent of the value of Y given the value of Z; that is P(X\vert Y,Z) = P(X\vert Z).
 
 Belief Networks aka Bayesian Networks aka Graphical Models
 
@@ -352,8 +352,8 @@ Why sampling?
 Inferencing rules:
 
 * Marginalization: $P(x) = \sum_y P(x, y)$
-* Chain rule: P(x, y) = P(x)P(y|x)
-* Bayes rule: P(y|x) = P(x|y)P(y)/P(x)
+* Chain rule: P(x, y) = P(x)P(y\vert x)
+* Bayes rule: P(y\vert x) = P(x\vert y)P(y)/P(x)
 
 ### 11. Randomized optimization
 
