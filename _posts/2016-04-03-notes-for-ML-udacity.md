@@ -310,9 +310,9 @@ VC dimension: the size of the largest subset of input that the hypothesis class 
 
 For d-dimensional hyperplane, the VC dimensionis d+1.
 
-Sample complexity and VC dimension: $m \ge \frac{1}{\epsilon} (8 VC(H) log_2^(\frac{13}{\epsilon})+4log_2^{\fac{2}{8}})$ for infinite case, $m \ge (ln(|H|) + ln(\frac{1}{8}))$ for finite case.
+Sample complexity and VC dimension: $m \ge \frac{1}{\epsilon} (8 VC(H) log_2^(\frac{13}{\epsilon})+4log_2^{\frac{2}{8}})$ for infinite case, $m \ge (ln(\vert H\vert) + ln(\frac{1}{8}))$ for finite case.
 
-For finite case, $d \le log_2(|H|)$. 
+For finite case, $d \le log_2(\vert H\vert)$. 
 
 H is PAC-learnable if and only if VC dimension is finite.
 
@@ -320,17 +320,17 @@ H is PAC-learnable if and only if VC dimension is finite.
 
 Bayesian learning: learn the most probable hypothesis given data and domain knowledge.
 
-$P(h|D) = \frac{P(D|h)P(h)}{P(D)}$
+$P(h\vert D) = \frac{P(D\vert h)P(h)}{P(D)}$
 
-$P(a,b) = P(a|b) P(b) = P(b|a) P(a)$
+$P(a,b) = P(a\vert b) P(b) = P(b\vert a) P(a)$
 
-P(D|h) is data given the hypothesis, P(h) is the prior on data, P(D) is prior on data.
+P(D\vert h) is data given the hypothesis, P(h) is the prior on data, P(D) is prior on data.
 
-For each $h \in H$, calculate $P(h|D) = P(D|h) P(h) / P(D)$. 
+For each $h \in H$, calculate $P(h|D) = P(D \vert h) P(h) / P(D)$. 
 
 Output (suppose P(h) is uniform):
 
-* map -> maximum posterior: $h_m = argmax P(h|D)$
+* map -> maximum posterior: $h_m = argmax P(h\vert D)$
 * machine learning -> maximum likelihood: $h_ML = argmax P(D|h)$. 
 
 ### 10. Bayesian inference
