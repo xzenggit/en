@@ -300,7 +300,7 @@ $ P(h_i(x) = c(x)) \le 1-\epsilon$, if everything is independent, we have P($h_i
 
 Because $-\epsilon \ge ln(1-\epsilon)$, $(1-\epsilon)^m \le e^{-\epsilon m}$.
 
-If H is finite, and m is a sequence of independent randomly drawn training points, then for any $0 \le \epsilon \le 1$, the probability that the version space is not $\epsilon$-exhausted is bounded above by $|H|e^{-\epsilon m}$.
+If H is finite, and m is a sequence of independent randomly drawn training points, then for any $0 \le \epsilon \le 1$, the probability that the version space is not $\epsilon$-exhausted is bounded above by $abs(H)e^{-\epsilon m}$.
 
 ### 8. VC dimensions
 
