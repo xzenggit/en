@@ -631,20 +631,24 @@ Properties of learning rates: $V_T(s) = V_{T-1}(s) + \alpha_T(R_T(s)-V_{T-1}(s))
 TD(1) Rule:
 
 * Episode T
+
 	* For all s, e(s) = 0 at start of episode, $V_T(s) = V_{T-1}(s)$
+
 	* After $s_{T-1}$->$s_T$ with reward $r_t$: $e(s_{T-1})=e(s_{T-1})+1$
+
 * For all s,
 	* $V_T(s) = V_T(s) + \alpha_T (r_t + \gamma V_{T-1}(s_t)-V_{T-1}(s_{T-1}))e(s)$; $e(s) = \gamma e(s)$
 
 $TD(\lambda)$ Rule:
 
 * Episode T
-	* For all s, e(s) = 0 at start of episode, $V_T(s) = V_{T-1}(s)
+	* For all s, e(s) = 0 at start of episode, $V_T(s) = V_{T-1}(s)$
 	* After $s_{T-1}$->$s_T$ with reward $r_t$: $e(s_{T-1})=e(s_{T-1})+1$
+
 * For all s,
 	* $V_T(s) = V_T(s) + \alpha_T (r_t + \gamma V_{T-1}(s_t)-V_{T-1}(s_{T-1}))e(s)$; $e(s) = \lambda \gamma e(s)$
 
-Bellman operator: let B be an operator, or mapping from value functions to value functions $BQ(s,a)=R(s,a) +\gamma \sum_{s'}T(s,a,s') \max_{a'}Q(s',a')$; $Q^*=BQ^*$ is Bellman Equation; $Q_T=BQ_{T-1}$ is Value Iteration.
+Bellman operator: let B be an operator, or mapping from value functions to value functions $BQ(s,a)=R(s,a) +\gamma \sum_{s'}T(s,a,s') \max_{a'}Q(s',a')$; $Q^{\*}=BQ^{\*}$ is Bellman Equation; $Q_T=BQ_{T-1}$ is Value Iteration.
 
 Contraction Mappings: B is an operator, if for all F, G and some $0 \le r <1$, $\vert BF-BG\vert _{\infty} \le r \vert F-G\vert _{\infty}$, then B is a contraction mapping.
 
