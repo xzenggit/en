@@ -310,7 +310,7 @@ VC dimension: the size of the largest subset of input that the hypothesis class 
 
 For d-dimensional hyperplane, the VC dimensionis d+1.
 
-Sample complexity and VC dimension: $m \ge \frac{1}{\epsilon} (8 VC(H) log_2 \frac{13}{\epsilon})+4log_2^{\frac{2}{8}}$ for infinite case, $m \ge (ln(\vert H\vert) + ln(\frac{1}{8}))$ for finite case.
+Sample complexity and VC dimension: $m \ge \frac{1}{\epsilon} (8 VC(H) log_2 \frac{13}{\epsilon}+4log_2^{\frac{2}{8}})$ for infinite case, $m \ge (ln(\vert H\vert) + ln(\frac{1}{8}))$ for finite case.
 
 For finite case, $d \le log_2(\vert H\vert)$.
 
@@ -370,7 +370,7 @@ Hill climbing:
 
 * Guess $x \in X$
 * Repeat:
-	* let $x^* = \argmax f(x)$ for $x \in N(x)$, N means neighborhood
+	* let $x^* = argmax f(x)$ for $x \in N(x)$, N means neighborhood
 	* if $f(x^*) > f(x)$: x = n
 	* else: stop
 
@@ -386,11 +386,13 @@ For a finite set of iterations:
 * Jump to new sample with probability given by an acceptance probability function $P(x, x_+, T)$
 * Decrease temperate T
 
-$P(x, x_+, T) = \left \{ \begin{tabular}{cc} 1 & if f(x_+) \ge f(x)\\ e^{\frac{f(x_+)-f(x)}{T}} & otherwise \end{tabular}$
+$P(x, x_+, T) = 1$, if $f(x_+) \ge f(x)$
+
+$P(x, x_+, T) = e^{\frac{f(x_+)-f(x)}{T}}$, otherwise.
 
 Properties of Simulated Annealing:
 
-* T -> $\inf$ means likely to move freely (random wal), T -> 0 means go uphill.
+* T -> $\infty$ means likely to move freely (random wal), T -> 0 means go uphill.
 * P(ending at x) = $\frac{e^{f(x)/T}}{Z_T}$ Boltzman distribution
 
 Genetic Algorithms (GA):
@@ -413,7 +415,9 @@ The above methods:
 
 MIMIC method: convey structure, direct model distribution.
 
-$P^{\theta}(x) = \left \{\begin{tabular}{cc} \frac{1}{z_{\theta}} & if f(x) \ge \theta\\ 0 & otherwise  $
+$P^{\theta}(x) = \frac{1}{z_{\theta}}$, if $f(x) \ge \theta$
+
+$P^{\theta}(x) = 0 $, otherwise
 
 $P^{\theta_{min}}(x) = uniform$; $P^{\theta_{max}}(x) = optima$
 
@@ -542,16 +546,16 @@ KL divergence: measure distance between two distributions $D(p \vert q) = \int p
 Sequence of rewards
 
 * infinite horizons -> stationary
-* Utility of sequeneces -> stationary preference, if $U(s_0, s_1, \ldots) > U(s_0, s_1^', \ldots)$, then $U(s_1, \ldots) > U(s_1^', \ldots)$.
+* Utility of sequeneces -> stationary preference, if $U(s_0, s_1, \ldots) > U(s_0, s_1^{\'}, \ldots)$, then $U(s_1, \ldots) > U(s_1^{\'}, \ldots)$.
 
 * $U(s_0, s_1, s_2, \ldots) = \sum_{t=0}^{\inf} R(s_t)$. This cannot tell the difference between two sequences if they all go to infinity
-* $U(s_0, s_1, s_2, \ldots) = \sum_{t=0}^{\inf} \gamma^t R(s_t) \le \sum_{t=0}^{\inf} \gamma^t R_{max} = \frac{R_{max}}{1-\gamma}$, $0 \le \gamma <1$. This is similar as the utility definition in economics.
+* $U(s_0, s_1, s_2, \ldots) = \sum_{t=0}^{\infty} \gamma^t R(s_t) \le \sum_{t=0}^{\infty} \gamma^t R_{max} = \frac{R_{max}}{1-\gamma}$, $0 \le \gamma <1$. This is similar as the utility definition in economics.
 
 Polices - Bellman Euqation:
 
-* $\Pi^* = \argmax_{\Pi} E[\sum_{t=0}^{\inf} \gamma^t R(s_t) \vert \Pi]$
+* $\Pi^* = argmax_{\Pi} E[\sum_{t=0}^{\infty} \gamma^t R(s_t) \vert \Pi]$
 
-* $ P^{\pi}(s) = E[\sum_{t=0}^{\inf} \gamma^t R(s_t) \vert \Pi, s_0 = s]$
+* $ P^{\pi}(s) = E[\sum_{t=0}^{\infty} \gamma^t R(s_t) \vert \Pi, s_0 = s]$
 
 * $\Pi^* = argmax_{a} \sum_{s'} T(s,a,s') U(s')$
 
@@ -642,7 +646,7 @@ $TD(\lambda)$ Rule:
 
 Bellman operator: let B be an operator, or mapping from value functions to value functions $BQ(s,a)=R(s,a) +\gamma \sum_{s'}T(s,a,s') \max_{a'}Q(s',a')$; $Q^*=BQ^*$ is Bellman Equation; $Q_T=BQ_{T-1}$ is Value Iteration.
 
-Contraction Mappings: B is an operator, if for all F, G and some $0 \le \r <1$, $\|BF-BG\|_{\infty} \le r \|F-G\|_{\infty}$, then B is a contraction mapping.
+Contraction Mappings: B is an operator, if for all F, G and some $0 \le r <1$, $\vert BF-BG\vert _{\infty} \le r \vert F-G\vert _{\infty}$, then B is a contraction mapping.
 
 Contraction Properties: if B is a contraction mapping,
 
@@ -652,7 +656,7 @@ Contraction Properties: if B is a contraction mapping,
 Bellman operator contracts:
 
 * $BQ(s,a) = R(s,a) + \gamma \sum_{s'}T(s,a,s') \max_{a'}Q(s',a')$
-* Given $Q_1, Q_2$, $\|BQ_1-BQ_2\|_{\inf}$ = \max_{a,s}|\gamma\sum_{s'}T(s,a,s')(\max_{a'}Q_1(s',a')-\max_{a'}Q_2(s',a'))| \le \gamma \max_{s'}|\max_{a'}Q_1(s',a')-\max_{a'}Q_2(s',a')| \le \gamma \max_{s',a'}|Q_1(s',a')-Q_2(s',a')|=\gamma \|Q_1-Q_2\|_{\inf}$
+* Given $Q_1, Q_2$, $\vert BQ_1-BQ_2\vert_{\inf}$ = \max_{a,s} \vert \gamma\sum_{s'}T(s,a,s')(\max_{a'}Q_1(s',a')-\max_{a'}Q_2(s',a'))\vert \le \gamma \max_{s'} \vert \max_{a'}Q_1(s',a')-\max_{a'}Q_2(s',a') \vert \le \gamma \max_{s',a'} \vert Q_1(s',a')-Q_2(s',a') \vert =\gamma \norm{ Q_1-Q_2 }_{\inf}$
 
 Why might we want to change the reward function for a MDP?
 
