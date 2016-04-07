@@ -34,9 +34,11 @@ tags: statistics
 
 * [Another Sochastic Calculus lectures from NYU](https://www.math.nyu.edu/faculty/varadhan/stochastic.fall08.html)
 
-### Regression Models
 
 ### Time Series Analysis
 * [Lectures from Chicagobooth](http://faculty.chicagobooth.edu/ruey.tsay/teaching/bs41202/sp2014/)
 
+### Theories
+* [Law of Large Numbers](http://mathworld.wolfram.com/LawofLargeNumbers.html)
+* [Central Limit Theorem](http://mathworld.wolfram.com/CentralLimitTheorem.html)
 
