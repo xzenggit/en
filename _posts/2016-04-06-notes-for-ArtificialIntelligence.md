@@ -27,7 +27,7 @@ Bayes Rule: $P(A\vert B) = \frac{P(B\vert A) P(A)}{P(B)}$
 * Monte Carlo localization: discrete, multi-modal
 * Partical filter: continous, multi-modal
 
- 1-D Gaussian: $f(x) = \frac{1}{\sqrt{2\pi{\sigma}^2}}e^{-\frac{1}{2}\frac{(x-\mu)^2}{{\sigma}^2}}$
+ 1-D Gaussian: $f(x) = \frac{1}{\sqrt{2\pi{\sigma}^2}}e^{-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}}$
 
 * Performing a measurement means updating our belief by a multiplicative factor, while moving involves performing a convolution.
 * Measurement meant updating our belief (and renormalizing our distribution). Motion meant keeping track of where all of our probability "went" when we moved (which meant using the law of Total Probability).
@@ -69,7 +69,7 @@ Key advantageof Particle Filter is easy to program.
 Resampling: Resample the particles with replacement and probability proportional to the importance weights.
 
 * Measurement updates: $P(x\vert z) \propto P(z\vert x) P(x)$
-* Motion updates: $P(x') = \sum P(x\vert x) P(x)$ 
+* Motion updates: $P(x') = \sum P(x\vert x) P(x)$
 * $P(x)$ is particles; $P(z\vert x)$ is importance weights; $P(x'\vert x)$ is sample
 
 ### 4. Search
@@ -93,7 +93,7 @@ Twiddle (coordiane descent): run() -> goodness
 
 ```pyton
 # twiddle algorithm
-def twiddle(tol = 0.2): 
+def twiddle(tol = 0.2):
 #Make this tolerance bigger if you are timing out!
 ############## ADD CODE BELOW ####################
     n_params = 3
