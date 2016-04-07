@@ -32,18 +32,18 @@ Rule of thumb for validation set size: A change that affects 30 examples in your
 
 Use stochastic gradient descent to make the optimization process faster, which is the core of deep learning.
 
-Two methods to help SGD faster: 
+Two methods to help SGD faster:
 
-* Momentum: for SGD, each step we take a very small step in a random direction, but on aggregate, those steps take us toward the minimum of the loss. We can take advantage of the knowledge that we've accumulated from previous steps about where we should be headed. A cheap way to do that is to keep a running average of the gradients, and to use that running average instead of the direction of the current batch of the data. M <- .0.9M + $\Delta \alpha$.
+* Momentum: for SGD, each step we take a very small step in a random direction, but on aggregate, those steps take us toward the minimum of the loss. We can take advantage of the knowledge that we've accumulated from previous steps about where we should be headed. A cheap way to do that is to keep a running average of the gradients, and to use that running average instead of the direction of the current batch of the data. M <- 0.9M + $\Delta \alpha$.
 * Learning rate decay: when replacing gradient descent with SGD, we are going to take smaller, noiser steps towards our objective. It is hard to decide how smaller that step should be. However, it is beneficial to make that step smaller and smaller as you train.
 
-Learning rate tuning: plot the loss and step figures. Never trust how quickly you learn, it has often little to do with how well you train. 
+Learning rate tuning: plot the loss and step figures. Never trust how quickly you learn, it has often little to do with how well you train.
 
-SGD hyper-parameters: initial learning rate, learning rate decay, momentum, batch size, weight initilization. 
+SGD hyper-parameters: initial learning rate, learning rate decay, momentum, batch size, weight initilization.
 
 When things don't work, always try to lower the learning rate first.
 
-AdaGrad is a modification of SGD which implicitly does momentum and learning rate decay for you. Using AdaGrad often makes learning less sensitive to hyper-parameters. But it often turns to be a litte worse than precisely tuned SDG with momentum. 
+AdaGrad is a modification of SGD which implicitly does momentum and learning rate decay for you. Using AdaGrad often makes learning less sensitive to hyper-parameters. But it often turns to be a litte worse than precisely tuned SDG with momentum.
 
 ### 2. Deep Neural Networks
 
@@ -65,12 +65,12 @@ Weight sharing: when you know that two inputs can contain the same kind of infor
 
 CNN is network that share parameters across space.
 
-Patches are sometimes called kernels. Each pancake in stack is called a feature map. Stride is the number of pixels that you shift each time you move the filter. 
+Patches are sometimes called kernels. Each pancake in stack is called a feature map. Stride is the number of pixels that you shift each time you move the filter.
 
 * Valid padding: do not go past the edge.
 * Same padding: go off the edge and pad with zeros.
 
-Pooling: Until now, we've used striding to shift the filters by a few pixel each time and reduce the future map size. This is a very aggresive way to downsample an image. It removes a lot of information. What if instead of skipping one in every two convolutions, we still ran with a very small stride, but then took all the convolutions in a neighborhood and combined them somehow. This is called pooling. The most common one is max pooling. At every point in the future map,look at a small neighborhood around that point and compute the maximum of all the responses around it. Max pooling doesn't add number of parameters, and doesn't risk an increasing overfitting. It simply often yields more accurate models. However, since the convolutions that run below run at a lower stride, the model becomes a lot more expensive to compute, and there are some paramters to set, such as pooling size and stride. Another notable form of pooling is average pooling. Instead of taking the max, just take an average over the window of pixels around a specific location. 
+Pooling: Until now, we've used striding to shift the filters by a few pixel each time and reduce the future map size. This is a very aggresive way to downsample an image. It removes a lot of information. What if instead of skipping one in every two convolutions, we still ran with a very small stride, but then took all the convolutions in a neighborhood and combined them somehow. This is called pooling. The most common one is max pooling. At every point in the future map,look at a small neighborhood around that point and compute the maximum of all the responses around it. Max pooling doesn't add number of parameters, and doesn't risk an increasing overfitting. It simply often yields more accurate models. However, since the convolutions that run below run at a lower stride, the model becomes a lot more expensive to compute, and there are some paramters to set, such as pooling size and stride. Another notable form of pooling is average pooling. Instead of taking the max, just take an average over the window of pixels around a specific location.
 
 1x1 convolutions: The classic convolution setting is  basically a small classifier for a patch of the image, and it's only a linear classifier. But if you add a 1x1 convolution in the middle, then you have a mini neural network running over the patch instead of a linear classifier. This is a very inexpensive way to make your models deeper and have more parameters without completely changing their structure. Actually, they are just matrix multiplies which have relative few parameters and computationaly cheap.
 
