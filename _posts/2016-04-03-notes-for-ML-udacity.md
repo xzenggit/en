@@ -660,7 +660,7 @@ Contraction Properties: if B is a contraction mapping,
 Bellman operator contracts:
 
 * $BQ(s,a) = R(s,a) + \gamma \sum_{s'}T(s,a,s') \max_{a'}Q(s',a')$
-* Given $Q_1, Q_2$, $\left\lVert BQ_1-BQ_2 \right\rVert_{\infty} = \max_{a,s} \vert \gamma \sum_{s'}T(s,a,s')(\max_{a'}Q_1(s',a')-\max_{a'}Q_2(s',a'))\vert \le \gamma \max_{s'} \vert \max_{a'}Q_1(s',a')-\max_{a'}Q_2(s',a') \vert \le \gamma \max_{s',a'} \vert Q_1(s',a')-Q_2(s',a') \vert =\gamma \left \lVert Q_1-Q_2  \right \rVert _{\infty}$
+* Given $Q_1, Q_2$, $\left\lVert BQ_1-BQ_2 \right\rVert_{\infty} $ = $\max_{a,s} \Vert \gamma \sum_{s'}T(s,a,s')(\max_{a'}Q_1(s',a')-\max_{a'}Q_2(s',a'))\Vert $ $\le \gamma \max_{s'} \Vert \max_{a'}Q_1(s',a')-\max_{a'}Q_2(s',a') \Vert$ $ \le \gamma \max_{s',a'} \vert Q_1(s',a')-Q_2(s',a') \vert =\gamma \left \lVert Q_1-Q_2  \right \rVert _{\infty}$
 
 Why might we want to change the reward function for a MDP?
 
