@@ -656,7 +656,7 @@ Contraction Properties: if B is a contraction mapping,
 Bellman operator contracts:
 
 * $BQ(s,a) = R(s,a) + \gamma \sum_{s'}T(s,a,s') \max_{a'}Q(s',a')$
-* Given $Q_1, Q_2$, $\vert BQ_1-BQ_2\vert_{\inf}$ = \max_{a,s} \vert \gamma\sum_{s'}T(s,a,s')(\max_{a'}Q_1(s',a')-\max_{a'}Q_2(s',a'))\vert \le \gamma \max_{s'} \vert \max_{a'}Q_1(s',a')-\max_{a'}Q_2(s',a') \vert \le \gamma \max_{s',a'} \vert Q_1(s',a')-Q_2(s',a') \vert =\gamma \norm{ Q_1-Q_2 }_{\inf}$
+* Given $Q_1, Q_2$, $\left\lVert BQ_1-BQ_2 \right\rVert_{\inf}$ = \max_{a,s} \vert \gamma \sum_{s'}T(s,a,s')(\max_{a'}Q_1(s',a')-\max_{a'}Q_2(s',a'))\vert \le \gamma \max_{s'} \vert \max_{a'}Q_1(s',a')-\max_{a'}Q_2(s',a') \vert \le \gamma \max_{s',a'} \vert Q_1(s',a')-Q_2(s',a') \vert =\gamma \left \lVert Q_1-Q_2  \right \rVert _{\inf}$
 
 Why might we want to change the reward function for a MDP?
 
@@ -673,7 +673,7 @@ How can we change the MDP reward function without changing the optimal policy?
 
 In a 2-player, zero-sum deterministic game of pefect information, minmax=maxmin and there always exists an optimal pure strategy for each player.
 
-Nash Equilibrium: n players with strategies $s_1, s_2, \ldots, s_n$, $s_1^* \in s_1, s_2^* \in s_2, \ldots, s_n^* \in s_n$ are a Nash Equilibrium if and only if $\forall i, s_i^* = argmax_{s_i} utility(s_1^*, \ldots, s_i, \ldots, s_n^*)$.
+Nash Equilibrium: n players with strategies $s_1, s_2, \ldots, s_n$, $s_1^* \in s_1, s_2^* \in s_2, \ldots, s_n^* \in s_n$ are a Nash Equilibrium if and only if $\forall i, s_i^{\*} = argmax_{s_i} utility(s_1^{\*}, \ldots, s_i, \ldots, s_n^{\*})$.
 
 * In the n-player pure strategy game, if elimination of all strictly nominated strategies, eliminates all but one combination of strategies, then that combination is in fact the unique Nash equilibrium.
 * Any Nash equilibrium will survive the iterated elimination of strictly dominated strategies. In other words if you get rid of things that are strictly dominated you will not accidentally get rid of nash equilibria in the process.
