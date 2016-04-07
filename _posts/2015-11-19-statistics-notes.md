@@ -14,13 +14,15 @@ tags: statistics
 
 * [Random from UAH including stochastic process](http://www.math.uah.edu/stat/index.html)
 
-### Common distributions 
+### Common distributions
 
 * [Table of Common Distributions](http://www.stat.tamu.edu/~twehrly/611/distab.pdf)
 
-* [Summary of common distribution with explainations](http://www.tlc.polito.it/dcc_team/distributions36f8.pdf)
+* [Summary of descriptive statistics](http://faculty.chicagobooth.edu/nicholas.polson/teaching/41000/41000_outline.pdf)
 
 * [Figures and details of common distributions](http://www.itl.nist.gov/div898/handbook/eda/section3/eda366.htm)
+
+* [Summary of statistics formula](http://www.cengage.com/resource_uploads/downloads/0495602205_151333.pdf)
 
 ### Common inequalities
 
@@ -28,7 +30,7 @@ tags: statistics
 
 * [Probability inequalities from Columbia](http://www.stat.cmu.edu/~larry/=stat705/Lecture2.pdf)
 
-### Stochastic Calculus 
+### Stochastic Calculus
 
 * [Stochastic Calculus lectures from NYU](http://www.math.nyu.edu/faculty/goodman/teaching/StochCalc2004/)
 
@@ -36,9 +38,11 @@ tags: statistics
 
 
 ### Time Series Analysis
+
 * [Lectures from Chicagobooth](http://faculty.chicagobooth.edu/ruey.tsay/teaching/bs41202/sp2014/)
 
 ### Theories
+
 * [Law of Large Numbers](http://mathworld.wolfram.com/LawofLargeNumbers.html)
 * [Central Limit Theorem](http://mathworld.wolfram.com/CentralLimitTheorem.html)
 
