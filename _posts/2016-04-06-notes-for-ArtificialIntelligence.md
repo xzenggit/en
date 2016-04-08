@@ -44,7 +44,7 @@ In Kalman Filter:
 Mutiply two Gaussians with $\mu_1, \sigma_1^2$ and $\mu_2, \sigma_2^2$, we have the new Guassian with
 
 * $\mu = \frac{\sigma_2^2 \mu_1 + \sigma_1^2 \mu_2}{\sigma_2^2+\sigma_1^2}$
-* $\sigma^2 = \frac{1}{\frac{1}{\sigma_2^2}+\frac{1}{\sigma_1^2}}
+* $\sigma^2 = \frac{1}{\frac{1}{\sigma_2^2}+\frac{1}{\sigma_1^2}}$
 * This is the measurement update.
 
 Motion update: $\mu_{new}$ <- $\mu + \nu$; $\sigma_{new}^2$ <- $\sigma^2+ \gamma^2$.
@@ -60,7 +60,7 @@ Suppose x is estimate, P is uncertainty covariance, F is state transition matrix
 
 |  |state space | belief | efficiency | in robotics|
 | -|:----------:| -------:|-------:|---------:|
-|Histogram Filter| discrete| multimodal| exponential|approximate}
+|Histogram Filter| discrete| multimodal| exponential|approximate|
 |Kalman Filter| continous| unimodal| quadratic | approximate|
 |Particle Filter| continuous| multimodal|?|approximate|
 
@@ -86,7 +86,7 @@ Smoothing algorithms: minimize $(x_i - y_i)^2 + \alpha (y_i - y_{i+1})^2$ using 
 
 * P controller:  steering = $-\tau_P * CTE$, CTE means cross track error.
 * PD controller: steering = $-\tau_P * CTE - \tau_D * \frac{dCTE}{dt}$
-* PID controller: steering = $-\tau_P * CTE - \tau_D * \frac{dCTE}{dt} - \tau_I \sum CTE$
+* PID controller: steering = $-\tau_P * CTE - \tau_D * \frac{dCTE}{dt} - \tau_I * \sum CTE$
 * P is proportional, to minimize error; I is integral, to compliment drift; D is differential, to avoid overshoot.
 
 Twiddle (coordiane descent): run() -> goodness
