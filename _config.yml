@@ -12,9 +12,10 @@ paginate:            5
 
 # Markdown
 markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+highlighter: rouge
+#kramdown:
+#  input: GFM
+#  syntax_highlighter: rouge
 
 # About/contact
 author:
