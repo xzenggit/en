@@ -7,6 +7,7 @@ tags: BigData
 ### 1. Basics
 
 Hadoop ecosystem:
+
 * HDFS: a distributed file-system for Hadoop
 * HBase: Hadoop NoSQL database
 * Hive: Hadoop data warehouse
@@ -16,7 +17,7 @@ Hadoop ecosystem:
 * MapReduce: a programming model for large scale data processing.
 * ZookKeeper: Hadoop centralized configuration system
 
-[!Hadoop V1 and V2](http://image.slidesharecdn.com/hadooparchitecture-091019175427-phpapp01/95/big-data-analytics-with-hadoop-25-638.jpg?cb=1411551606)
+![Hadoop V1 and V2](http://image.slidesharecdn.com/hadooparchitecture-091019175427-phpapp01/95/big-data-analytics-with-hadoop-25-638.jpg?cb=1411551606)
 
 HDFS:
 
@@ -54,7 +55,7 @@ Tutorials:
 I followed this [tutorial](http://hortonworks.com/hadoop-tutorial/learning-the-ropes-of-the-hortonworks-sandbox/) to install the sandbox for Hortonworks Data Platform.
 
 After start the sandbox, we can open a webpage with `127.0.0.1:8888`, and get
-[!HDP](https://raw.githubusercontent.com/hortonworks/tutorials/hdp/assets/learning-the-ropes-of-the-hortonworks-sandbox/sandbox_welcome_page_learning_the_ropes_sandbox.png)
+![HDP](https://raw.githubusercontent.com/hortonworks/tutorials/hdp/assets/learning-the-ropes-of-the-hortonworks-sandbox/sandbox_welcome_page_learning_the_ropes_sandbox.png)
 
 Then, we can login the sandbox with:
 
@@ -64,7 +65,7 @@ ssh root@127.0.0.1 -p 2222;
 ```
 
 We can also explore the [Ambari page](https://ambari.apache.org), which is like an adimn system aimed at making Hadoop management simpler. The Ambari page is like this
-[!Ambari](https://c2.staticflickr.com/2/1649/26058920560_33ab47deb0_c.jpg)
+![Ambari](https://c2.staticflickr.com/2/1649/26058920560_33ab47deb0_c.jpg)
 
 Update Ambari password: `$ ambari-admin-password-reset`
 
@@ -135,6 +136,7 @@ hive > SELECT total FROM (SELECT c1 + c2 AS total FROM mytable) my_query;
 ```
 
 Common operations:
+
 * See current tables: `hive> SHOW TABLES;`
 * Check the schema: `hive> DESCRIBE mytable;`
 * Check the table name: `hive> ALTER TABLE mytable RENAME to mt;`
@@ -195,6 +197,7 @@ Pig Latin allows you to write a data flow that describes how data will be transf
 * [Pig Latin Basics](http://pig.apache.org/docs/r0.14.0/basic.html#filter)
 
 Pig data types:
+
 * Tuple: ordered set of values
 * Bag: unordered collection of tuples
 * Map: collection of key value pairs
@@ -208,6 +211,7 @@ STORE grouped INTO 'severevents';
 ```
 
 Debugging tips:
+
 * Use `illustate`, `explain`, and `describe`
 * Use local mode to test script before running it in the cluster
 
