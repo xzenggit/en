@@ -11,7 +11,7 @@ tags: DeepLearning
 
 ### Loss function
 
- $L = \frac{1}{N} \sum_{i=1}^N \sum_{j \neq y_i}$ max$(0, f(x_i, W)_j -f(x_i, W)_{y_j}+1) + \lambda R(W)$
+ $L = \frac{1}{N} \sum_{i=1}^N \sum_{j \neq y_i}$ max$(0, {f(x_i, W)}_j -{f(x_i, W)}_{y_j}+1) + \lambda R(W)$
 
 In commom use:
 
