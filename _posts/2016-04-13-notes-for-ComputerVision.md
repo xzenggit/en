@@ -11,13 +11,13 @@ tags: DeepLearning
 
 ### Loss function
 
- $L = \frac{1}{N} \sum_{i=1}^N \sum_{j \neq y_i} max(0, f(x_i; W)_j -f(x_i; W)_{y_j}+1) + \lambda R(W)$
+ $L = \frac{1}{N} \sum_{i=1}^N \sum_{j \neq y_i}$ $max(0, f(x_i; W)_j -f(x_i; W)_{y_j}+1) + \lambda R(W)$
 
 In commom use:
 
 * L2 regularization $R(W) = \sum_k \sum_l W_{k,l}^2$
-* L1 regularization $R(W) = \sum_k \sum_l \Vert W_{k,l} \Vert$
-* Elastic net (L1+L2) $R(W) = \sum_k \sum_l \beta_1 W_{k,l}^2 + \beta_2 \Vert W_{k,l} \Vert$
+* L1 regularization $R(W) = \sum_k \sum_l \vert W_{k,l} \vert$
+* Elastic net (L1+L2) $R(W) = \sum_k \sum_l \beta_1 W_{k,l}^2 + \beta_2 \vert W_{k,l} \vert$
 * Dropout: randomly set some neurons to zeros in the forward pass; force the network to have a redundant representation; need to scale at test time.
 
 Loss function type:
@@ -52,7 +52,7 @@ In practice: always use analytic gradient, but check implementation with numeric
     - does not die
     - closer to zero mean outputs
     - computation requires exp()
-* Maxout "neuron" $max(\w_1^T x + b_1, w_2^Tx+b_2)$
+* Maxout "neuron" $max(w_1^T x + b_1, w_2^Tx+b_2)$
     - generalize ReLu and Leaky ReLU
     - linear regime, does not saturate, does not die
     - doubles the number of parameters
@@ -148,7 +148,7 @@ The Conv Layer:
     - their spatial extent $F$,
     - the stride $S$,
     - the amount of zero padding $P$.
-* Produces a volume of size \(W_2 \times H_2 \times D_2\) where:
+* Produces a volume of size $W_2 \times H_2 \times D_2$ where:
     - $W_2 = (W_1 - F + 2P)/S + 1$
     - $H_2 = (H_1 - F + 2P)/S + 1$ (i.e. width and height are computed equally by symmetry)
     - $D_2 = K$
@@ -189,7 +189,7 @@ Implement convolutions FFT:
 * Compute FFT of weights: F(W)
 * Compute FFT of image: F(X)
 * Compute elementwise product: F(W)F(X)
-* Compute inverse FFT: $Y=F^{-1}(F(W)F(X))
+* Compute inverse FFT: $Y=F^{-1}(F(W)F(X))$
 
 Segmentation:
 
