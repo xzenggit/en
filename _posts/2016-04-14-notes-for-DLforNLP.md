@@ -86,7 +86,7 @@ General strategy for successful Neural Nets
 * Check for implementation bugs with gradient checks
 * Parameter initialization
     - Initialize hidden layer biases to 0 and output biases to optimal value if weights were 0
-    - Initialize weights ~uniform(-r, r), r inversely proportional to fan-in (previous layer size) and fan-out(next layer size) $\sqrt{6/(fan-in + fan-out)}$
+    - Initialize weights ~uniform(-r, r), r inversely proportional to fan_in (previous layer size) and fan_out(next layer size) $\sqrt{6/(fan_in + fan_out)}$
 * Optimization: 
     - SGD usually wins over all batch methods on large datasets
     - L-BFGS or Conjugate Gradients win on smaller datasets
@@ -104,10 +104,10 @@ General strategy for successful Neural Nets
 
 Adagrad:
 
-* Standard SGD, fixed $\alpha$: $\theta_{new} = \theta_{old} - \alpha \bigtriangledown _{\theta} J_{t}(\theta)$
+* Standard SGD, fixed $\alpha$: $\theta_{new} = \theta_{old} - \alpha$ $\nabla _{\theta} J_{t}(\theta)$
 * Instead: adpative learning rates, learning rate is adapting differently for each parameter and parameters get larger updates than frequently occurring parameters. 
 * $g_{t,i} = \frac{\partial}{\partial \theta_{t,i}}J_t(\theta)$
-* $\theta_{t,i} = \theta_{t-1, i} - \frac{\alpha}{\sqrt{\sum_{\tau=1}^t}}g_{t,i}
+* $\theta_{t,i} = \theta_{t-1, i} - \frac{\alpha}{\sqrt{\sum_{\tau=1}^t}}g_{t,i}$
 
 Deep learning tricks of the trade (Y. Bengio, 2012): 
 
@@ -139,7 +139,7 @@ Vanishing or exploding gradient problem for RNN: the gradient is a product of Ja
 
 The solution first introduce by Mikolov is to clip gradients to a maximum value. Pesudo code for norm clipping:
 
-* $g <- \frac{\partial \epsilon}{\partial \theta}
+* $g <- \frac{\partial \epsilon}{\partial \theta}$
 * if $\Vert g \Vert \ge$ threshold then
     - $ g <- \frac{threshold}{\Vert g \Vert} g$
 * end if
