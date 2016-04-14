@@ -4,6 +4,7 @@ title: Notes for Deep Learning
 tags: DeepLearning MachineLearning Udacity
 ---
 
+## [UFLDL Deep Learning Tutorial](http://ufldl.stanford.edu/tutorial/)
 
 ## notes for [Deep Learning at Udacity](https://www.udacity.com/course/deep-learning--ud730)
 
