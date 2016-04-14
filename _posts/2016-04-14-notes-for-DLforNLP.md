@@ -104,7 +104,7 @@ General strategy for successful Neural Nets
 
 Adagrad:
 
-* Standard SGD, fixed $\alpha$: $\theta_{new} = \theta_{old} - \alpha$ $\nabla _{\theta} J_{t}(\theta)$
+* Standard SGD, fixed $\alpha$: $\theta_{new} = \theta_{old} - \alpha$ $\nabla_{\theta} J_{t}(\theta)$
 * Instead: adpative learning rates, learning rate is adapting differently for each parameter and parameters get larger updates than frequently occurring parameters. 
 * $g_{t,i} = \frac{\partial}{\partial \theta_{t,i}}J_t(\theta)$
 * $\theta_{t,i} = \theta_{t-1, i} - \frac{\alpha}{\sqrt{\sum_{\tau=1}^t}}g_{t,i}$
