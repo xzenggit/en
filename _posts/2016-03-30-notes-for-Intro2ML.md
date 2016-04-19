@@ -283,6 +283,10 @@ Recall: true positive / (false negative + true positive) = d/(c+d)
 
 Precision: true positiove / (ture positive + false positive) = d/(b+d) 
 
+The F1 score can be interpreted as a weighted average of the precision and recall, where an F1 score reaches its best value at 1 and worst at 0:
+
+F1 = 2 * (precision * recall) / (precision + recall)
+
 ```python
 from sklearn import tree
 from sklearn.metrics import accuracy_score
