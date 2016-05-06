@@ -1983,3 +1983,421 @@ int main()
     return 0;
 }
 ```
+
+# Notes for [Technical Interview at Udacity](https://www.udacity.com/course/technical-interview--ud513)
+
+
+### List-based collections
+
+
+Python [Time Complexity](https://wiki.python.org/moin/TimeComplexity)
+
+** Linked List**
+
+```python
+class Element(object):
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class LinkedList(object):
+    def __init__(self, head=None):
+        self.head = head
+
+    def append(self, new_element):
+        current = self.head
+        if self.head:
+            while current.next:
+                current = current.next
+            current.next = new_element
+        else:
+            self.head = new_element
+
+    def get_position(self, position):
+        counter = 1
+        current = self.head
+        if position < 1:
+            return None
+        while current and counter <= position:
+            if counter == position:
+                return current
+            current = current.next
+            counter += 1
+        return None
+
+    def insert(self, new_element, position):
+        counter = 1
+        current = self.head
+        if position > 1:
+            while current and counter < position:
+                if counter == position - 1:
+                    new_element.next = current.next
+                    current.next = new_element
+                current = current.next
+                counter += 1
+        elif position == 1:
+            new_element.next = self.head
+            self.head = new_element
+
+    def delete(self, value):
+        current = self.head
+        previous = None
+        while current.value != value and current.next:
+            previous = current
+            current = current.next
+        if current.value == value:
+            if previous:
+                previous.next = current.next
+            else:
+                self.head = current.next
+
+```
+
+**Stack**
+
+```python
+class Element(object):
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class LinkedList(object):
+    def __init__(self, head=None):
+        self.head = head
+
+    def append(self, new_element):
+        current = self.head
+        if self.head:
+            while current.next:
+                current = current.next
+            current.next = new_element
+        else:
+            self.head = new_element
+
+    def insert_first(self, new_element):
+        new_element.next = self.head
+        self.head = new_element
+
+    def delete_first(self):
+        if self.head:
+            deleted_element = self.head
+            temp = deleted_element.next
+            self.head = temp
+            return deleted_element
+        else:
+            return None
+
+class Stack(object):
+    def __init__(self,top=None):
+        self.ll = LinkedList(top)
+
+    def push(self, new_element):
+        self.ll.insert_first(new_element)
+
+    def pop(self):
+        return self.ll.delete_first()
+
+```
+
+
+**deque**
+
+Adeque is a double-ended queue. You can enqueue on either end. In python, you can import deque by `from collections import deque`.
+
+```python
+class Queue(object):
+    def __init__(self, head=None):
+        self.storage = [head]
+
+    def enqueue(self, new_element):
+        self.storage.append(new_element)
+
+    def peek(self):
+        return self.storage[0]
+
+    def dequeue(self):
+        return self.storage.pop(0)
+```
+
+### Searching and Sorting
+
+Binary Search: $O(log(n))$
+
+```python
+def binary_search(input_array, value):
+    """binary search."""
+    first = 0 
+    last = len(input_array) - 1
+    
+    while first <= last:
+        mid = (first + last) / 2 
+        if input_array[mid] == value:
+            return mid
+        else:
+            if value < input_array[mid]:
+                last = mid - 1
+            else:
+                first = mid + 1
+    return -1
+
+```
+
+* Bubble Sort: worst case ($O(n^2)$), average case ($O(n^2)$), best case ($O(n)$); space ($O(1)$)
+* Merge Sort: time ($O(nlog(n))$), space ($O(n)$)
+* Quick Sort: generally time ($O(nlog(n))$), space ($O(1)$)
+
+Here's a good explanation of Quick Sort and corresponding Python implementation.
+
+### Maps and Hashing
+
+When we're talking about hash tables, we can define a "load factor":
+
+Load Factor = Number of Entries / Number of Buckets
+
+The purpose of a load factor is to give us a sense of how "full" a hash table is. For example, if we're trying to store 10 values in a hash table with 1000 buckets, the load factor would be 0.01, and the majority of buckets in the table will be empty. We end up wasting memory by having so many empty buckets, so we may want to rehash, or come up with a new hash function with less buckets. We can use our load factor as an indicator for when to rehash—as the load factor approaches 0, the more empty, or sparse, our hash table is. 
+On the flip side, the closer our load factor is to 1 (meaning the number of values equals the number of buckets), the better it would be for us to rehash and add more buckets. Any table with a load value greater than 1 is guaranteed to have collisions. 
+
+```python
+class HashTable(object):
+    def __init__(self):
+        self.table = [None]*10000
+
+    def store(self, string):
+        hv = self.calculate_hash_value(string)
+        if hv != -1:
+            if self.table[hv] != None:
+                self.table[hv].append(string)
+            else:
+                self.table[hv] = [string]
+
+    def lookup(self, string):
+        hv = self.calculate_hash_value(string)
+        if hv != -1:
+            if self.table[hv] != None:
+                if string in self.table[hv]:
+                    return hv
+        return -1
+
+    def calculate_hash_value(self, string):
+        value = ord(string[0])*100 + ord(string[1])
+        return value
+```
+
+### Trees
+
+```python
+class BinaryTree(object):
+    def __init__(self, root):
+        self.root = Node(root)
+
+    def search(self, find_val):
+        return self.preorder_search(tree.root, find_val)
+
+    def print_tree(self):
+        return self.preorder_print(tree.root, "")[:-1]
+
+    def preorder_search(self, start, find_val):
+        if start:
+            if start.value == find_val:
+                return True
+            else:
+                return self.preorder_search(start.left, find_val) or self.preorder_search(start.right, find_val)
+        return False
+
+    def preorder_print(self, start, traversal):
+        if start:
+            traversal += (str(start.value) + "-")
+            traversal = self.preorder_print(start.left, traversal)
+            traversal = self.preorder_print(start.right, traversal)
+        return traversal
+```
+
+
+```python
+# Binary Search Tree
+class BST(object):
+    def __init__(self, root):
+        self.root = Node(root)
+
+    def insert(self, new_val):
+        self.insert_helper(self.root, new_val)
+
+    def insert_helper(self, current, new_val):
+        if current.value < new_val:
+            if current.right:
+                self.insert_helper(current.right, new_val)
+            else:
+                current.right = Node(new_val)
+        else:
+            if current.left:
+                self.insert_helper(current.left, new_val)
+            else:
+                current.left = Node(new_val)
+
+    def search(self, find_val):
+        return self.search_helper(self.root, find_val)
+
+    def search_helper(self, current, find_val):
+        if current:
+            if current.value == find_val:
+                return True
+            elif current.value < find_val:
+                return self.search_helper(current.right, find_val)
+            else:
+                return self.search_helper(current.left, find_val)
+        return False
+
+```
+
+Heap is a special type of tree that a huge elements are arranged in increasing or decreasing order such that the root element is either the maximum or minimum value in the tree. 
+
+Heaps search: $O(n)$
+
+Delete and insert with heapify: worst case $O(logn)$
+
+Heap is typically stored as a array.
+
+Binary Tree: 
+    * Search O(n)
+    * Delte O(n)
+    * Insert O(log(n))
+
+Binary Search Tree:
+    * Search O(log(n))
+    * Insert O(log(n))
+
+### Graphs
+
+Disconnected graphs are very similar whether the graph's directed or undirected—there is some vertex or group of vertices that have no connection with the rest of the graph.
+
+A directed graph is weakly connected when only replacing all of the directed edges with undirected edges can cause it to be connected. 
+
+ In a connected graph, there is some path between one vertex and every other vertex.
+
+ Strongly connected directed graphs must have a path from every node and every other node. So, there must be a path from A to B AND B to A.
+
+ Graph representation: vertex and edges objects
+
+ * Edge list
+ * Adjacency list
+ * Adjacency matrix
+
+```python
+# Graph
+class Node(object):
+    def __init__(self, value):
+        self.value = value
+        self.edges = []
+
+class Edge(object):
+    def __init__(self, value, node_from, node_to):
+        self.value = value
+        self.node_from = node_from
+        self.node_to = node_to
+
+class Graph(object):
+    def __init__(self, nodes=[], edges=[]):
+        self.nodes = nodes
+        self.edges = edges
+
+    def insert_node(self, new_node_val):
+        new_node = Node(new_node_val)
+        self.nodes.append(new_node)
+        
+    def insert_edge(self, new_edge_val, node_from_val, node_to_val):
+        from_found = None
+        to_found = None
+        for node in self.nodes:
+            if node_from_val == node.value:
+                from_found = node
+            if node_to_val == node.value:
+                to_found = node
+        if from_found == None:
+            from_found = Node(node_from_val)
+            self.nodes.append(from_found)
+        if to_found == None:
+            to_found = Node(node_to_val)
+            self.nodes.append(to_found)
+        new_edge = Edge(new_edge_val, from_found, to_found)
+        from_found.edges.append(new_edge)
+        to_found.edges.append(new_edge)
+        self.edges.append(new_edge)
+
+    def get_edge_list(self):
+        edge_list = []
+        for edge_object in self.edges:
+            edge = (edge_object.value, edge_object.node_from.value, edge_object.node_to.value)
+            edge_list.append(edge)
+        return edge_list
+
+    def get_adjacency_list(self):
+        max_index = self.find_max_index()
+        adjacency_list = [None] * (max_index + 1)
+        for edge_object in self.edges:
+            if adjacency_list[edge_object.node_from.value]:
+                adjacency_list[edge_object.node_from.value].append((edge_object.node_to.value, edge_object.value))
+            else:
+                adjacency_list[edge_object.node_from.value] = [(edge_object.node_to.value, edge_object.value)]
+        return adjacency_list
+
+    def get_adjacency_matrix(self):
+        max_index = self.find_max_index()
+        adjacency_matrix = [[0 for i in range(max_index + 1)] for j in range(max_index + 1)]
+        for edge_object in self.edges:
+            adjacency_matrix[edge_object.node_from.value][edge_object.node_to.value] = edge_object.value
+        return adjacency_matrix
+
+    def find_max_index(self):
+        max_index = -1
+        if len(self.nodes):
+            for node in self.nodes:
+                if node.value > max_index:
+                    max_index = node.value
+        return max_index
+```
+
+### Case Studies
+
+* Shortest path problem: 
+    - Dijkstra's Algorithm for weighted undirected graphs (pick the lowest weight) $O(V^2)$
+* Knapsack problem:
+    - Brute Force: $O(2^n)$
+    - Dynamic Programming
+* Traveling Salesman Problem (NP-hard)
+    - NP-hard problems don't have a known algorithm that can solve them in polynomial time. 
+    - 
+
+### Technical Interview Techniques
+
+* Clarifying the question 
+* Generating inputs and output
+* Generating test cases
+* Brainstorming
+* Runtime analysis
+* Coding
+* Debugging
+
+**Websites:**
+
+* [HackerRank](https://www.hackerrank.com/): Website and community with programming challeges that you can go through for additional practice.
+
+* [Project Euler](https://projecteuler.net/): This website has a ton of logic problems that you can practice writing coded solutions to.
+
+* [Interview Cake](https://www.interviewcake.com/): Practice questions and some tutorials available.
+
+* [Interactive Python](http://interactivepython.org/runestone/static/pythonds/index.html): Loads of tutorials on pretty much every topic covered here and many more, along with Python examples and concept questions.
+
+* [Topcoder](https://www.topcoder.com/): New practice problems every day, and some tech companies use answers to those problems to find new potential hires.
+
+* [LeetCode](https://leetcode.com/): Practice problems, mock interviews, and articles about problems.
+
+* [BigO Cheat Sheet](http://bigocheatsheet.com/): Summary of efficiencies for most common algorithms and data structures.
+
+* [Five Essential Phone Screen Questions](https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions)
+
+
+
+References:
+
+* [Problem solving with Algorithms and Data Structures](http://interactivepython.org/runestone/static/pythonds/index.html)
+
