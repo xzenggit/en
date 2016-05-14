@@ -387,6 +387,47 @@ def lps(str):
 # This code is contributed by Bhavya Jain
 ```
 
+[This one](https://compuzzle.wordpress.com/2014/10/23/dynamic-programming-code-in-python-for-longest-palindromic-subsequence/) may be easier to understand.
+
+```python
+def longest_pal(str):
+   n=len(str)
+ 
+   #initialize Opt Table
+   Opt=[[0 for i in range(n)] for j in range(n) ]
+ 
+    #Opt of single char is 1
+    for i in range(n):
+       Opt[i][i] = 1
+ 
+    #Opt for adjacent chars is 2 if same, 1 otherwise
+    for i in range(n-1):
+       if str[i]==str[i+1]:
+          Opt[i][i+1]=2
+       else:  Opt[i][i+1]=1
+ 
+# we now define sil as (s)substring (i)interval (l) length of the
+# interval [i,j] --- sil=(j-i +1) and j = i+sil-1
+ 
+# we compute Opt table entry for each sil length and
+# starting index i
+ 
+   for sil in range(2, n+1):
+      for i in range(n-sil+1):
+          j = i+sil-1
+          if (str[i] == str[j] ):
+             Opt[i][j] = Opt[i+1][j-1] + 2;
+          else:
+             Opt[i][j] = max(Opt[i][j-1], Opt[i+1][j])
+ 
+      return Opt[0][n-1]
+ 
+str1="a man two cats a crazy plan aibohphobia and a canal in panama"
+print str1, "has longest palindrome subsequence length"
+print longest_pal(str1)
+```
+
+
 ### Greedy Algorithms Problems
 
 Greedy is an algorithmic paradigm that builds up a solution piece by piece, always choosing the next piece that offers the most obvious and immediate benefit. Greedy algorithms are used for optimization problems. An optimization problem can be solved using Greedy if the problem has the following property: At every step, we can make a choice that looks best at the moment, and we get the optimal solution of the complete problem.
