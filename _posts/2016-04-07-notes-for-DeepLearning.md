@@ -6,6 +6,10 @@ tags: DeepLearning MachineLearning Udacity
 
 ## [UFLDL Deep Learning Tutorial](http://ufldl.stanford.edu/tutorial/)
 
+## [Deep Learning Book](http://www.deeplearningbook.org/)
+
+## [First Contact with TensorFlow](http://www.jorditorres.org/first-contact-with-tensorflow/)
+
 ## notes for [Deep Learning at Udacity](https://www.udacity.com/course/deep-learning--ud730)
 
 ### 1. Machine Learning to Deep Learning
@@ -109,6 +113,7 @@ LSTM regulization: L2 and Dropout
 RNN can be used to generate sequences.
 
 Imagine that you have a model that predicts the next step of your sequence. You can use that to generate sequences. You sample from the predicted distribution and then pick one element based on its probability, and then feed to the next step and go on. Do this repeatedly, you can generate a pretty good sequence. A more sophisticated way is instead of sampling once at each step, sample multiple times. Choose the best sequence out of those by computing the total probability of all the characters that you generated so far. This can prevent the sampling from accidentally making one by choice, and being stuck with the one bad decision forever. A smarter way to do this is called Beam Search, which only keep the mostly likely few candidate sequences at every time step, and simply prune the rest. This works very well in practice.
+
 
 
 
