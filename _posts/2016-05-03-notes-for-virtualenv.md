@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Notes for virtualenv
-tags: python virtualenv
+tags: Python virtualenv
 ---
 
 # Notes for [virtualenv](https://virtualenv.pypa.io/en/latest/index.html)
