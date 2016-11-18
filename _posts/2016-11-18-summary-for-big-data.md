@@ -7,10 +7,15 @@ tags: BigData
 ## Hadoop notes:
 
 Create directory: `$hadoop hdfs dfs -mkdir /user/new_directory`
+
 Copy local file to server: `$hadoop hdfs dfs -put local_file /user/new_directory`
+
 Run ls: `$hadoop hdfs dfs -ls`
+
 Copy server file to local: `$hadoop hdfs dfs -get file_name /user/new_direcotry`
+
 Delete file: `$hadoop hdfs dfs -rm file_name /usr/new_directory`
+
 Basically, it is similar as the linux system commands, but with “hadoop hdfs dfs -” at the beginning.
 
 
@@ -45,12 +50,8 @@ import sys
 for line in sys.stdin:
     #--- remove leading and trailing whitespace---
     line = line.strip()
-
-
     #--- split the line into words ---
     words = line.split()
-
-
     #--- output tuples [word, 1] in tab-delimited format---
     for word in words: 
         print '%s\t%s' % (word, "1")
@@ -79,7 +80,6 @@ for line in sys.stdin:
     except ValueError:
         continue
 
-
     try:
         word2count[word] = word2count[word]+count
     except:
@@ -91,13 +91,14 @@ for word in word2count.keys():
     print '%s\t%s'% ( word, word2count[word] )
 ```
 
-
-
-** Running on the Hadoop Cluster **
+### Running on the Hadoop Cluster
 
 Let's run the Python code on the Ulysses.txt file.
+
 We'll assume that the Python code is stored in ~hadoop/352/dft/python
+
 We'll assume that the streaming java library is in ~hadoop/contrib/streaming/streaming-0.19.2-streaming.jar
+
 We'll also assume that ulysses.txt is in dft and that we want the output in dft-output:
 
 ```bash
@@ -169,7 +170,7 @@ We'll consider a simple example where we start by creating an RDD with just two 
 [(2, 'to'), (2, 'fun'), (2, 'have'), (1, 'its'), (1, 'know'), (1, 'how'), (1, 'you'), (1, 'but')]
 
 ```
-** map( <function> ) **
+### map( <function> )
 
 map returns a new RDD containing values created by applying the supplied function to each value in the original RDD. Here we use a lambda function which replaces some common punctuation characters with spaces and convert to lower case, producing a new RDD:
 
@@ -179,7 +180,7 @@ map returns a new RDD containing values created by applying the supplied functio
 ['its fun to have fun ', 'but you have to know how ']
 ```
 
-** flatMap( <function> ) **
+### flatMap( <function> )
 
 flatMap applies a function which takes each input value and returns a list. Each value of the list becomes a new, separate value in the output RDD. In our example, the lines are split into words and then each word becomes a separate value in the output RDD:
 
@@ -190,7 +191,7 @@ flatMap applies a function which takes each input value and returns a list. Each
 >>>
 ```
 
-** map( <function> ) **
+### map( <function> ) 
 
 In this second map invocation, we use a function which replaces each original value in the input RDD with a 2-tuple containing the word in the first position and the integer value 1 in the second position:
 
@@ -201,7 +202,7 @@ In this second map invocation, we use a function which replaces each original va
 >>>
 ```
 
-** reduceByKey( <function ) **
+### reduceByKey( <function )
 
 Expect that the input RDD contains tuples of the form (<key>,<value>). Create a new RDD containing a tuple for each unique value of <key> in the input, where the value in the second position of the tuple is created by applying the supplied lambda function to the <value>s with the matching <key> in the input RDD. Here the key will be the word and lambda function will sum up the word counts for each word. The output RDD will consist of a single tuple for each unique word in the data, where the word is stored at the first position in the tuple and the word count is stored at the second position.
 
@@ -211,7 +212,7 @@ Expect that the input RDD contains tuples of the form (<key>,<value>). Create a 
 [('fun', 2), ('to', 2), ('its', 1), ('know', 1), ('how', 1), ('you', 1), ('have', 2), ('but', 1)]
 ```
 
-** map( <function> ) **
+### map( <function> )
 
 map a lambda function to the data which will swap over the first and second values in each tuple, now the word count appears in the first position and the word in the second position
 
@@ -221,7 +222,7 @@ map a lambda function to the data which will swap over the first and second valu
 [(2, 'fun'), (1, 'how'), (1, 'its'), (1, 'know'), (2, 'to'), (1, 'you'), (1, 'but'), (2, 'have')]
 ```
 
-** sortByKey( ascending=True|False ) **
+### sortByKey( ascending=True) 
 
 sort the input RDD by the key value (the value at the first position in each tuple). In this example the first position stores the word count so this will sort the words so that the most frequently occurring words occur first in the RDD - the False parameter sets the sort order to descending (pass
 
@@ -250,8 +251,7 @@ Many operations including map and flatMap operations can be applied independentl
 When processing reduceByKey, Spark will create a number of output partitions based on the default paralellism based on the numbers of nodes and cores available to Spark. Data is effectively reshuffled so that input data from different input partitions with the same key value is passed to the same output partition and combined there using the specified reduce function. sortByKey is another operation which transforms N input partitions to M output partitions.
 
 ```python
->>> sc.defaultParallelism
-4
+>>> sc.defaultParallelism 4
 >>> wordcounts = sc.textFile('hdfs://ubuntu1:54310/user/dev/gutenberg') \
             .map( lambda x: x.replace(',',' ').replace('.',' ').replace('-',' ').lower()) \
             .flatMap(lambda x: x.split()) \
@@ -368,6 +368,7 @@ model.transform(df).show()
 
 
 References:
+
 * http://www.mccarroll.net/blog/pyspark/index.html
 * http://www.mccarroll.net/blog/pyspark2/index.html
 * http://spark.apache.org/examples.html
