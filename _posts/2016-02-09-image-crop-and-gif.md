@@ -26,4 +26,15 @@ mogrify -format jpg *.png
 convert -delay 10 -loop 0 *.jpg my_animation.gif
 ```
 
+Script for [combing multiple pictures into one picture](http://superuser.com/questions/290656/combine-multiple-images-using-imagemagick):
+
+```shell
+#!/bin/bash
+# Combine horizontally
+convert in-1.jpg in-2.jpg +append outh.jpg
+# Combine vertically
+convert in-1.jpg in-2.jpg -append outv.jpg
+```
+
+
 Note: to use the `convert` command, you need to install [ImageMagic](http://www.imagemagick.org/script/index.php).
