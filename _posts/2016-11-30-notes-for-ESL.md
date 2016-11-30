@@ -19,6 +19,12 @@ A large subset of the most popular techinques in use today are variants of these
 * Linear models fit to a basis expansion of the original inputs allow arbitrarily complex models. 
 * Projection pursuit and neural network models consist of summs of nonlinearly transformed linear models. 
 
+The errors of model fitting could be decomposed into two parts: variance and squared bias. Therefore, we will have this kind of bias-variance tradeoff.
+
+More generally, as the model complexity increases, the variance tends to increase and the bias tends to decrease, and verse versa. 
+
+
+
 
 
 
