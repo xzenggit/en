@@ -115,7 +115,7 @@ RNN can be used to generate sequences.
 Imagine that you have a model that predicts the next step of your sequence. You can use that to generate sequences. You sample from the predicted distribution and then pick one element based on its probability, and then feed to the next step and go on. Do this repeatedly, you can generate a pretty good sequence. A more sophisticated way is instead of sampling once at each step, sample multiple times. Choose the best sequence out of those by computing the total probability of all the characters that you generated so far. This can prevent the sampling from accidentally making one by choice, and being stuck with the one bad decision forever. A smarter way to do this is called Beam Search, which only keep the mostly likely few candidate sequences at every time step, and simply prune the rest. This works very well in practice.
 
 
-
+* [零基础入门深度学习](https://www.zybuluo.com/hanbingtao/note/541458)
 
 
 
