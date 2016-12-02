@@ -19,6 +19,14 @@ A large subset of the most popular techinques in use today are variants of these
 * Linear models fit to a basis expansion of the original inputs allow arbitrarily complex models. 
 * Projection pursuit and neural network models consist of summs of nonlinearly transformed linear models. 
 
+## Ch3. Linear Methods for Regression
+
+To test the hypothesis that a particular coefficient is zero, we can calculate the z-score. A large (absolute) value of z-score will lead to rejection of this hypothesis. The z-score measures the effect of dropping certain variable. 
+
+If we need to test for the significant of groups of coefficients simultaneously. We can use the F statistic.
+
+The Gauss-Markov theorem implies that the least sqaures estimator has the smallest mean sqaured error of all linear estimators with no bias. 
+
 
 
 
