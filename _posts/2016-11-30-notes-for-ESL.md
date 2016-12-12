@@ -31,6 +31,12 @@ If we need to test for the significant of groups of coefficients simultaneously.
 
 The Gauss-Markov theorem implies that the least sqaures estimator has the smallest mean sqaured error of all linear estimators with no bias. 
 
+Best-subset selection finds for each k the subset of size k that gives smallest residual sum of squares. 
 
+Rather than search through all possible subsets, we can seek a good path through them. Forward-stepwise selection starts with the intercept, and then sequentially adds into the model the predictor that most improves the fit. It is a greedy algorithm. 
+
+Backward-stepwise selection starts with the full model, and sequentially deletes the predictor that has the least impact on the fit. The candidate for dropping is the variable with the smallest Z-score.
+
+Shrinkage Methods: Ridge (L2 norm), Lasso (L1 norm), Elastic Net (combine both). Ridge regression may be preferred because it shrinks smoothly, rather than in discrete steps. Lasso falls somewhere between ridge regression and best subset regression, and enjoys some of the properties of each.
 
 
