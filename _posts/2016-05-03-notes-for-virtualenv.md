@@ -25,3 +25,8 @@ Basic command:
     - `yolk -l`
 
 [Here](http://www.simononsoftware.com/virtualenv-tutorial/) is a great tutorial for `virtualenv`.
+
+
+To use virtualenv install Python3, we can do the following ([reference](https://stackoverflow.com/questions/23842713/using-python-3-in-virtualenv)):
+* `pip install --upgrade virtualenv`
+* `virtualenv -p python3 envname`
