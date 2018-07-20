@@ -15,6 +15,37 @@ There are many many many ... python tutorials on the internet. I found some of t
 5. [Introduction to Python for Econometrics, Statistics and Data Analysis](https://www.kevinsheppard.com/images/0/09/Python_introduction.pdf)
 6. [Python Scientific Lecture Notes](http://scipy-lectures.github.io/)
 
+
+## Environment setting of different python versions
+
+As we know, Python has different version (2.x vs 3.x). How to use two different versions while not mess them up? Using Conda, we can do this. 
+
+
+** Install a different version of Python **
+
+```python
+# Create a 'python3' environment and install Python3
+conda create --name python3 python=3
+
+# Activate 'python3' environment
+source active python3
+
+# Deactive 'python3' environment
+source deactive python3
+
+# Check all environments under Conda
+conda info --envs
+
+# Install packages under current environment
+conda install package_name
+# Or
+conda install --name environment_name package_name
+
+# Update certain package
+conda update package_name
+```
+
+
 ### Notes from [Python for data analysis](https://github.com/pydata/pydata-book/blob/master/ch02.ipynb)
 ### Ch2. Introductory Examples
 Use inline function example: `time_zones = [rec['tz'] for rec in records if 'tz' in rec]`
