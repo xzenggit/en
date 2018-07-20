@@ -39,4 +39,17 @@ Backward-stepwise selection starts with the full model, and sequentially deletes
 
 Shrinkage Methods: Ridge (L2 norm), Lasso (L1 norm), Elastic Net (combine both). Ridge regression may be preferred because it shrinks smoothly, rather than in discrete steps. Lasso falls somewhere between ridge regression and best subset regression, and enjoys some of the properties of each.
 
+## Ch4. Linear Methods for Classification
+
+Linear Discriminant Analysis (LDA) approaches the classification problems by assuming that the conditional probability desnity functions are both normally distributed with mean and covariance parameters, respectively. Under this assumption, the Bayes optimial solution is to predict points as being from the 2nd class if the log of the likelihood ratios is below some threshold T. 
+
+
+Logistic regression does not assume any specific shapes of densities in the space of predictor variables, but LDA does. Logistic regression is based on maximum likelihood estimation. LDA is based on least squares estimation. 
+
+It is generally felt that logistic regression is a safer, more robust bet than the LDA model, relying on fewer assumptions. 
+
+
+
+
+
 

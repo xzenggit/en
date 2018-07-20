@@ -48,11 +48,12 @@ Entropy = $-\sum_rP(r)log(P(r))$
 
 ID3 Bias: restrictive bias (hypothesis), preference bias(inductive bias).
 
-### 2. Regression and classification
+### 2. Regression
 
 * [Generailzied regression](http://scikit-learn.org/stable/modules/linear_model.html)
 * [Cross validaiton](http://scikit-learn.org/stable/modules/cross_validation.html)
 * [Model valuation](http://scikit-learn.org/stable/modules/model_evaluation.html)
+
 
 ### 3. Neural Network
 
