@@ -13,7 +13,7 @@ There are many many many ... python tutorials on the internet. I found some of t
 3. [Dataquest data science course](https://www.dataquest.io/)
 4. [Quantitative Economics Python](http://quant-econ.net/py/index.html)
 5. [Introduction to Python for Econometrics, Statistics and Data Analysis](https://www.kevinsheppard.com/images/0/09/Python_introduction.pdf)
-6. [Python Scientific Lecture Notes](http://scipy-lectures.github.io/)
+6. [Python Scientific Lecture Notes](http://www.scipy-lectures.org/)
 
 
 ## Environment setting of different python versions
