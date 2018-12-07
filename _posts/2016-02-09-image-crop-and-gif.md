@@ -38,3 +38,6 @@ convert in-1.jpg in-2.jpg -append outv.jpg
 
 
 Note: to use the `convert` command, you need to install [ImageMagic](http://www.imagemagick.org/script/index.php).
+
+About delegate libraries:
+* try install imagemagick-devel and libpng-devel
