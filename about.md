@@ -3,10 +3,9 @@ layout: page
 title: About
 ---
 
-Hello, I’m Xiangming Zeng, currently a Phd Candidate of Physical Oceanography at North Carolina State University. My work is combing data and models to understand and predict the variation of ocean status.
+Hello, welcome to my notebook!
 
-In my spare time, I like hiking, visiting museums, watching movies, and exploring machine learning and web related new techniques. You can find more information about me and my work [here](http://xzenggit.github.io).
+This is my personal notebook. Usually, I find things are not easy to remember, especially some technical details. So I start to write down some technical tricks or some concepts and understandings about certain theory or algorithm. Hope you find them useful too.
 
-This is my personal notebook. I hope you will find it useful too!
-
-Note: The website is based on [Mark Otto's Lanyon](https://github.com/poole/lanyon) theme.
+---------------------------------------------------------------------------------------------------------
+记性越来越不太好，很多以前记得或者理解的概念，时间久了就慢慢忘记掉了。所以就有了这个笔记本网站，我习惯把自己学到的、认为以后还会用到而且大概率会记不清楚的东西记录到这里，希望这些东西对你也有用。
